@@ -229,7 +229,7 @@
         $('#lang select').on('change', onLangChange);
 
         var languageRegexp = /[&?]lang=([^&?]+)/;
-        var defaultGroup = "progornoprog";
+        var defaultGroup = "toplevel";
 
         // Check for language part in URL
         if (languageRegexp.test(document.location.search)) {
