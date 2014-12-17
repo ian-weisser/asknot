@@ -47,13 +47,13 @@ a {
 }
 
 .question {
-    font-size: 20pt;
+    font-size: 16pt;
     padding: 0 10% 0 10%;
 }
 
 #responses {
     padding-top: 1em;
-    font-size: 30pt;
+    font-size: 20pt;
     background-image: -moz-radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), -moz-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), -moz-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
     background-image: -webkit-radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), -webkit-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), -webkit-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
     background-image: -o-radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), -o-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), -o-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
@@ -89,30 +89,37 @@ a {
     border: 0 none;
 }
 
+/* Color palette: https://design.ubuntu.com/brand/colour-palette */
+/* #DD4814 Ubuntu Orange 100%*/
+/* #E77E5A Ubuntu Orange  70%*/
 #ok a {
-    background-color: #84C83C;
-    background: -moz-linear-gradient(#84C83C, #66AA1E) repeat scroll 0 0 #84C83C;
-    background: -webkit-linear-gradient(#84C83C, #66AA1E) repeat scroll 0 0 #84C83C;
-    background: -o-linear-gradient(#84C83C, #66AA1E) repeat scroll 0 0 #84C83C;
-    background: linear-gradient(#84C83C, #66AA1E) repeat scroll 0 0 #84C83C;
+    background-color: #E77E5A;
+    background: -moz-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
+    background: -webkit-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
+    background: -o-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
+    background: linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
     box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
 }
 
+/* #77216F Light Aubergine 100% */
+/* #9F639A Light Augergine  70% */
 #next a {
-    background-color: #669BE1;
-    background: -moz-linear-gradient(#669BE1, #487DC3) repeat scroll 0 0 #669BE1;
-    background: -webkit-linear-gradient(#669BE1, #487DC3) repeat scroll 0 0 #669BE1;
-    background: -o-linear-gradient(#669BE1, #487DC3) repeat scroll 0 0 #669BE1;
-    background: linear-gradient(#669BE1, #487DC3) repeat scroll 0 0 #669BE1;
+    background-color: #9F639A;
+    background: -moz-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
+    background: -webkit-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
+    background: -o-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
+    background: linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
     box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
 }
 
+/* #AEA79F Warm Grey 100%*/
+/* #C6C1BB Warm Grey  70%*/
 #back a {
-    background-color: #F19932;
-    background: -moz-linear-gradient(#F19932, #D37B14) repeat scroll 0 0 #F19932;
-    background: -webkit-linear-gradient(#F19932, #D37B14) repeat scroll 0 0 #F19932;
-    background: -o-linear-gradient(#F19932, #D37B14) repeat scroll 0 0 #F19932;
-    background: linear-gradient(#F19932, #D37B14) repeat scroll 0 0 #F19932;
+    background-color: #C6C1BB;
+    background: -moz-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
+    background: -webkit-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
+    background: -o-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
+    background: linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
     box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
 }
 
@@ -121,14 +128,14 @@ a {
 }
 
 .choices li {
-    font-size: 60pt;
-    font-weight: 800;
+    font-size: 45pt;
+    font-weight: 400;
 }
 
 .extra {
     color: #666;
     font-size: 20pt;
-    font-weight: 600;
+    font-weight: 200;
     padding-bottom: 1em;
 }
 
