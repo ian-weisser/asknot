@@ -3,16 +3,6 @@
     var choiceIndex = [];
     var choices     = [];
     var stack       = [];
-    var currentLang = "en"; // Default lang
-    var rtlLangs    = {"ar": "","fa": ""};
-
-    function detectRtl(value) {
-      if (value in rtlLangs) {
-        document.documentElement.dir = "rtl";
-      } else {
-        document.documentElement.dir = "ltr";
-      }
-    }
 
     function chooseNegativeResponse() {
         var responses = $('.negative').not('.visible');
@@ -133,11 +123,6 @@
         switchGroup(stack[stack.length - 1]);
     }
 
-    function onLangChange() {
-        document.webL10n.setLanguage(this.value);
-        detectRtl(this.value);
-        setLangQueryString(this.value)
-    }
 
     function setLocationHashSuffix(value) {
         var midValue = stack.join("/");
@@ -145,19 +130,6 @@
         window.location.hash = "#!/" + midValue + "/" + value;
     }
 
-    // Uses HTML5 pushState with fallback to window.location
-    function setLangQueryString(value) {
-        var urlPart = "?lang=" + value + window.location.hash;
-
-        currentLang = value;
-
-        if (supportsPushState()) {
-          history.pushState({ lang: value, location: window.location.hash },
-                            "", urlPart);
-        } else {
-          window.location = urlPart;
-        }
-    }
 
     function setGroupChoices(group, choiceId) {
 
@@ -197,27 +169,6 @@
       return !! (window.history && history.pushState);
     }
 
-    function supportsLang(value) {
-      return !! $('#lang option[value=' + value + ']').length;
-    }
-
-    function changeLang(value) {
-      var option = $('#lang option[value=' + value + ']');
-
-      if (option.length) {
-        // If the browser language is supported, select the good option
-
-        document.webL10n.setLanguage(value);
-        detectRtl(value);
-        option.prop('selected', 'selected');
-
-        currentLang = value;
-
-        return currentLang;
-      } else {
-        return false;
-      }
-    }
 
     window.onpopstate = function(event) {
     }
@@ -226,33 +177,9 @@
         $('#ok a:first').on('click', investigate);
         $('#next a:first').on('click', nextChoice);
         $('#back a:first').on('click', takeBack);
-        $('#lang select').on('change', onLangChange);
 
-        var languageRegexp = /[&?]lang=([^&?]+)/;
         var defaultGroup = "toplevel";
 
-        // Check for language part in URL
-        if (languageRegexp.test(document.location.search)) {
-          var testLang   = document.location.search.match(languageRegexp),
-              langCode   = testLang[1];
-
-          if (supportsLang(langCode)) {
-            changeLang(langCode);
-          }
-        } else {
-          // Using browser language if found
-
-          // Detected browser language
-          var browserLang = document.webL10n.getLanguage();
-          // Default language (value of the selected <option> element)
-          var defaultLang = currentLang;
-
-          if (defaultLang !== browserLang && supportsLang(browserLang)) {
-            changeLang(browserLang);
-          } else {
-            changeLang(defaultLang);
-          }
-        }
 
         // Check for permalink
         if (window.location.hash.length > 1) {
