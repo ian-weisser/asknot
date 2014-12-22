@@ -8,7 +8,6 @@
   <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
   <script type="text/javascript" src="foopy.js"></script>
   <script type="text/javascript" src="l10n.js"></script>
-  <link rel="resource" type="application/l10n" href="locales.ini" />
 
 
   <title>What can I do for Ubuntu</title>
@@ -32,19 +31,6 @@
         <li next-group="develop">Coding and development</span></li>
         <li next-group="quality">Quality and design</span></li>
         <li next-group="support">Support</span></li>
-        <!-- <li next-group="dummy" target="http://community.ubuntu.com/contribute/documentation/">Improve documentation
-          <div class="extra">with the Ubuntu Documentation Team</div>
-        </li>
-        <li target="http://community.ubuntu.com/contribute/design/">User experience
-          <div class="extra">Designing for the Desktop, Tablet, and Phone</div>
-        </li>
-        <li target="http://community.ubuntu.com/help-information/meeting-other-ubuntu-users/">Meeting people
-          <div class="extra">with Local Community groups</div>
-        </li> -->
-
-        <!-- Example line with l10n data
-        <li next-group="proglang"><span data-l10n-id="writecode"></span></li>
-        -->
       </ul>
     </div>
 
@@ -198,48 +184,19 @@
     </div>
 
 
-    <!-- Example group with full l10n strings
-    <div class="group" id="softtest">
-      <span class="question" data-l10n-id="qa-intro"></span>
-      <ul class="choices">
-        <li target="https://quality.mozilla.org/teams/web-qa/" data-choice-id="webqa">Web QA
-          <div class="extra" data-l10n-id="webqa-extra"></div>
-        </li>
-        <li target="https://quality.mozilla.org/teams/firefoxqe/" data-choice-id="ffqa">Firefox QA
-          <div class="extra" data-l10n-id="ffqa-extra"></div>
-        </li>
-        <li target="https://quality.mozilla.org/teams/thunderbird/" data-choice-id="tbqa">Thunderbird QA
-          <div class="extra" data-l10n-id="thunderbirdqa-extra"></div>
-        </li>
-      </ul>
-    </div>
-    -->
-
-    <!-- Example submenu with l10n strings
-    <div class="group" id="proglang">
-      <span class="question" data-l10n-id="question"></span>
-      <ul class="choices">
-        <li next-group="cpp">C++</li>
-        <li next-group="js">JavaScript</li>
-        <li next-group="java">Java</li>
-      </ul>
-    </div>
-    -->
-
-
     <div id="responses">
-      <div id="ok"><a href="javascript:" data-l10n-id="more"></a></div>
+      <div id="ok"><a href="javascript:">Tell me more</a></div>
       <div id="next">
         <a href="javascript:">
-          <span data-l10n-id="negative1" class="negative"></span>
-          <span data-l10n-id="negative2" class="negative"></span>
-          <span data-l10n-id="negative3" class="negative"></span>
-          <span data-l10n-id="negative4" class="negative"></span>
-          <span data-l10n-id="negative5" class="negative"></span>
-          <span data-l10n-id="negative6" class="negative"></span>
+          <span class="negative">No, not interested</span>
+          <span class="negative">Show me something else</span>
+          <span class="negative">Boring</span>
+          <span class="negative">Pffft, whatever</span>
+          <span class="negative">Not my line of expertise</span>
+          <span class="negative">Next please</span>
         </a>
       </div>
-      <div id="back"><a href="javascript:" data-l10n-id="back"></a></div>
+      <div id="back"><a href="javascript:">I was wrong, take me back</a></div>
       <!-- message showing only if javascript disabled -->
       <noscript>
           <span>Please enable JavaScript in your browser!</span>
