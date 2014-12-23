@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700,700italic|Ubuntu+Mono:400,700);
+
+/* Override to eliminate all margins and padding
+* {
+margin: 0;
+padding: 0;
+} */
+
+
+#volunteer_wizard {
+    font-family: "Ubuntu";
+    font-weight: 300;
+    text-shadow: 0 1px 0 #fff;
+    color: #333;
+    margin-top: 0px;
+    text-align: center;
+    padding-top: 60px;
+}
+
+
+select {
+    background: #fff;
+    border-color: #b2b2b2;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.choices li {
+    display: none;
+    /* margin-left is a kludge to properly center the text */
+    margin-left: -20px;
+}
+
+.question {
+    display: none;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+a {
+    color: #F17100;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.9), 0px 1px 1px rgba(255,255,255,0.9);
+}
+
+.question {
+    font-size: 16pt;
+    padding: 0 10% 0 10%;
+}
+
+#responses {
+    padding-top: 1 em;
+    font-size: 20pt;
+    /* Mozilla formatting - Horizontal bar with cool shading
+     * background-image: -moz-radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), -moz-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), -moz-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
+     * background-image: -webkit-radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), -webkit-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), -webkit-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
+     * background-image: -o-radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), -o-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), -o-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
+     * background-image: radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
+     * background-size: 100% 5px, 100% 100px, 100% 100%;
+     * background-repeat: no-repeat;
+     */
+} 
+
+#responses div {
+    margin-bottom: 0.5em;
+    /**
+     * display:none needed in case if js is disabled
+     */
+    display:none;
+}
+
+#responses div a:hover {
+    cursor: pointer;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset, 0px 3px 48px rgba(255,255,255,0.2) inset;
+}
+
+#responses div a:active {
+    cursor: pointer;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1) inset, 0 1px rgb(255, 255, 255, 0.1), 0px 3px 48px rgba(0,0,0,0.2) inset;
+}
+
+#responses div a {
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+    padding: 2px 10px 8px;
+    border-radius: 6px;
+    border: 0 none;
+}
+
+/* Color palette: https://design.ubuntu.com/brand/colour-palette */
+/* #DD4814 Ubuntu Orange 100%*/
+/* #E77E5A Ubuntu Orange  70%*/
+#ok a {
+    background-color: #E77E5A;
+    background: -moz-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
+    background: -webkit-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
+    background: -o-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
+    background: linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
+}
+
+/* #77216F Light Aubergine 100% */
+/* #9F639A Light Augergine  70% */
+#next a {
+    background-color: #9F639A;
+    background: -moz-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
+    background: -webkit-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
+    background: -o-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
+    background: linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
+}
+
+/* #AEA79F Warm Grey 100%*/
+/* #C6C1BB Warm Grey  70%*/
+#back a {
+    background-color: #C6C1BB;
+    background: -moz-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
+    background: -webkit-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
+    background: -o-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
+    background: linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
+}
+
+#back a span .negative {
+    box-shadow: none;
+}
+
+.choices li {
+    font-size: 45pt;
+    font-weight: 400;
+}
+
+.extra {
+    color: #666;
+    font-size: 20pt;
+    font-weight: 200;
+    padding-bottom: 1em;
+}
+
+
+.negative {
+    display: none;
+}
+
+.visible {
+    display: inline;
+}
+
+

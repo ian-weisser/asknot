@@ -73,7 +73,7 @@
           setGroupChoices(group, choiceId);
         }
 
-        var firstChoice = $('#wrapper > div')[0].id;
+        var firstChoice = $('#volunteer_wizard > div')[0].id;
         $('#back')[0].style.display = group === firstChoice ? 'none' : 'block';
         $('#next')[0].style.display = group !== firstChoice && choices[choices.length - 1].length == 1 ? 'none' : 'block';
         $('.question', groupNode)[0].style.display = 'block';

@@ -2,10 +2,11 @@
 <html>
 <head>
 
+  <meta charset="UTF-8"> 
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <link rel="stylesheet" type="text/css" href="style.css" title="Default">
   <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
-  <script type="text/javascript" src="foopy.js"></script>
+  <script type="text/javascript" src="guidance_wizard.js"></script>
 
 
   <title>What can I do for Ubuntu</title>
@@ -20,7 +21,9 @@
 </head>
 <body>
 
-  <div id="wrapper">
+  <!-- If converting this to a php file for Wordpress, delete everything above this line -->
+
+  <div id="volunteer_wizard">
     <div class="group" id="toplevel">
       <span class="question">How would you like to help?<br/>What scratches your itch?
       <ul class="choices">
@@ -162,7 +165,6 @@
         <li target="http://askubuntu.com/">Answer questions
           <div class="extra">at AskUbuntu</div>
         </li>
-        </li>
         <li target="http://askubuntu.com/">Edit and refine answers
           <div class="extra">at AskUbuntu</div>
         </li>
@@ -201,6 +203,10 @@
       </noscript>
       <!-- end of noscript message -->
     </div>
+
+  </div> <!-- volunteer_wizard -->
+
+  <!-- If converting this to a php file for Wordpress, delete everything below this line -->
 
 </body>
 </html>
