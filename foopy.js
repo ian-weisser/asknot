@@ -17,10 +17,6 @@
         $(negative).addClass('visible');
     }
 
-    function trackExternalLink() {
-      window.ga('send', 'event', 'outbound', 'click', $('#ok')[0].firstChild.href);
-    }
-
     function incrementAndWrap(curr, max) {
         if(max === undefined) {
           max = $('.choices li', groupNode).length;
@@ -41,7 +37,6 @@
         lastChoice.style.display = 'none';
         choice.style.display = 'inline';
         var button = $('#ok')[0];
-        button.removeEventListener('click', trackExternalLink);
         var isExternal = choice.hasAttribute('target');
         button.firstChild.href = !isExternal ?
             '#!/' + stack.join('/') + '/' + getUIDAttribute(choice) + '/' : choice.getAttribute('target');
@@ -49,9 +44,6 @@
         $('#next a:first').attr('href', '#!/' + stack.join('/') + '/' + getUIDAttribute(nextChoice));
         $('#back a:first').attr('href', '#!/' + stack.join('/', stack.slice(stack.length - 1, 1)));
 
-        if (isExternal) {
-          button.addEventListener('click', trackExternalLink);
-        }
         setLocationHashSuffix(getUIDAttribute(choice));
     }
 
@@ -185,8 +177,6 @@
         if (window.location.hash.length > 1) {
             var query      = window.location.hash,
                 queryParts = query.split("/");
-
-            window.ga('send', 'pageview', query);
 
             queryParts.shift(); // Dropping '#!'
 
