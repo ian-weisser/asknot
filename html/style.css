@@ -1,14 +1,22 @@
+.negative {
+    /* Used by guidance_wizard.js*/
+    display: none;
+}
 
-/* Override to eliminate all margins and padding
-* {
-margin: 0;
-padding: 0;
-} */
+.visible {
+    /* Used by guidance_wizard.js*/
+    display: inline;
+}
+
+
+/* All data below here is identified with id="volunteer_wizard" to
+ * prevent name conflicts with other styles and services.
+ */
 
 
 #volunteer_wizard {
     font-family: "Ubuntu";
-    font-weight: 300;
+    /* font-weight: 300; */
     text-shadow: 0 1px 0 #fff;
     color: #333;
     margin-top: 0px;
@@ -17,68 +25,37 @@ padding: 0;
 }
 
 
-select {
-    background: #fff;
-    border-color: #b2b2b2;
-    border-style: solid;
-    border-width: 1px;
-}
-
-.choices li {
-    display: none;
-    /* margin-left is a kludge to properly center the text */
-    margin-left: -20px;
-}
-
-.question {
+#volunteer_wizard .question {   /* "How would you like to help?" */
     display: none;
     text-align: center;
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
-
-a {
-    color: #F17100;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.9), 0px 1px 1px rgba(255,255,255,0.9);
-}
-
-.question {
+    padding: 20px 0 20px 0;
     font-size: 16pt;
-    padding: 0 10% 0 10%;
+    font-weight: 300;
 }
 
-#responses {
-    padding-top: 1 em;
+#volunteer_wizard .choices li {  /* "Create..." */
+    display: none;
+    margin-left: -20px;   /* kludge to properly center the text */
+    font-size: 45pt;
+    font-weight: 400;
+}
+
+#volunteer_wizard .extra {  /* "...with the Ubuntu Security Team" */
+    color: #666;
     font-size: 20pt;
-    /* Mozilla formatting - Horizontal bar with cool shading
-     * background-image: -moz-radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), -moz-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), -moz-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
-     * background-image: -webkit-radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), -webkit-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), -webkit-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
-     * background-image: -o-radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), -o-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), -o-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
-     * background-image: radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
-     * background-size: 100% 5px, 100% 100px, 100% 100%;
-     * background-repeat: no-repeat;
-     */
-} 
-
-#responses div {
-    margin-bottom: 0.5em;
-    /**
-     * display:none needed in case if js is disabled
-     */
-    display:none;
+    font-weight: 200;
+    padding-bottom: 0.5em;
 }
 
-#responses div a:hover {
-    cursor: pointer;
-    box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset, 0px 3px 48px rgba(255,255,255,0.2) inset;
+
+#volunteer_wizard #responses div {
+    margin-bottom: 0.5em; /* Vert spacing between buttons */
+    font-size: 20pt;      /* Button font size             */
+    font-weight: 500;
+    display:none;         /* In case JS is disabled       */
 }
 
-#responses div a:active {
-    cursor: pointer;
-    box-shadow: 0 3px rgba(0, 0, 0, 0.1) inset, 0 1px rgb(255, 255, 255, 0.1), 0px 3px 48px rgba(0,0,0,0.2) inset;
-}
-
-#responses div a {
+#volunteer_wizard #responses div a {  /* Each button */
     text-decoration: none;
     color: #fff;
     text-shadow: 0 1px 0 rgba(0,0,0,0.5);
@@ -87,10 +64,23 @@ a {
     border: 0 none;
 }
 
-/* Color palette: https://design.ubuntu.com/brand/colour-palette */
-/* #DD4814 Ubuntu Orange 100%*/
-/* #E77E5A Ubuntu Orange  70%*/
-#ok a {
+#volunteer_wizard #responses div a:hover {  /* Mouseover the button */
+    cursor: pointer;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset, 0px 3px 48px rgba(255,255,255,0.2) inset;
+}
+
+#volunteer_wizard #responses div a:active { /* Click the button */
+    cursor: pointer;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1) inset, 0 1px rgb(255, 255, 255, 0.1), 0px 3px 48px rgba(0,0,0,0.2) inset;
+}
+
+
+#volunteer_wizard #ok a { 
+    /* "Tell me more..." button
+     * Color palette: https://design.ubuntu.com/brand/colour-palette
+     * #DD4814 Ubuntu Orange 100%
+     * #E77E5A Ubuntu Orange  70%
+     */
     background-color: #E77E5A;
     background: -moz-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
     background: -webkit-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
@@ -99,9 +89,13 @@ a {
     box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
 }
 
-/* #77216F Light Aubergine 100% */
-/* #9F639A Light Augergine  70% */
-#next a {
+
+#volunteer_wizard #next a {
+    /* "No thanks, next..." button
+     * Color palette: https://design.ubuntu.com/brand/colour-palette
+     * #77216F Light Aubergine 100%
+     * #9F639A Light Augergine  70%
+     */
     background-color: #9F639A;
     background: -moz-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
     background: -webkit-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
@@ -110,40 +104,19 @@ a {
     box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
 }
 
-/* #AEA79F Warm Grey 100%*/
-/* #C6C1BB Warm Grey  70%*/
-#back a {
+
+#volunteer_wizard #back a {
+    /* "I was wrong, take me back..." button
+     * Color palette: https://design.ubuntu.com/brand/colour-palette
+     * #AEA79F Warm Grey 100%
+     * #C6C1BB Warm Grey  70%
+     */
     background-color: #C6C1BB;
     background: -moz-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
     background: -webkit-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
     background: -o-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
     background: linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
     box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
-}
-
-#back a span .negative {
-    box-shadow: none;
-}
-
-.choices li {
-    font-size: 45pt;
-    font-weight: 400;
-}
-
-.extra {
-    color: #666;
-    font-size: 20pt;
-    font-weight: 200;
-    padding-bottom: 1em;
-}
-
-
-.negative {
-    display: none;
-}
-
-.visible {
-    display: inline;
 }
 
 
