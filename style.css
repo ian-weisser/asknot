@@ -2,10 +2,11 @@
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700,700italic|Ubuntu+Mono:400,700);
 
+/* Override to eliminate all margins and padding
 * {
 margin: 0;
 padding: 0;
-}
+} */
 
 
 #wrapper {
@@ -13,7 +14,7 @@ padding: 0;
     font-weight: 300;
     text-shadow: 0 1px 0 #fff;
     color: #333;
-    margin-top:0px;
+    margin-top: 0px;
     text-align: center;
     padding-top: 60px;
 }
@@ -28,12 +29,15 @@ select {
 
 .choices li {
     display: none;
+    /* margin-left is a kludge to properly center the text */
+    margin-left: -20px;
 }
 
 .question {
     display: none;
     text-align: center;
     padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 a {
@@ -47,15 +51,17 @@ a {
 }
 
 #responses {
-    padding-top: 1em;
+    padding-top: 1 em;
     font-size: 20pt;
-    background-image: -moz-radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), -moz-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), -moz-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
-    background-image: -webkit-radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), -webkit-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), -webkit-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
-    background-image: -o-radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), -o-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), -o-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
-    background-image: radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
-    background-size: 100% 5px, 100% 100px, 100% 100%;
-    background-repeat: no-repeat;
-}
+    /* Mozilla formatting - Horizontal bar with cool shading
+     * background-image: -moz-radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), -moz-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), -moz-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
+     * background-image: -webkit-radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), -webkit-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), -webkit-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
+     * background-image: -o-radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), -o-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), -o-radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
+     * background-image: radial-gradient(center top , ellipse farthest-side, rgba(140, 140, 140, 0.5), rgba(140, 140, 140, 0) 95%), radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.5), rgba(220, 220, 220, 0)), radial-gradient(center top , ellipse farthest-side, rgba(220, 220, 220, 0.3), rgba(220, 220, 220, 0));
+     * background-size: 100% 5px, 100% 100px, 100% 100%;
+     * background-repeat: no-repeat;
+     */
+} 
 
 #responses div {
     margin-bottom: 0.5em;
