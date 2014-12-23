@@ -3,12 +3,20 @@ Ask not what Ubuntu can do for you but what you can do for Ubuntu?
 A starting place for contributors to look for projects to work on, This html gently guides users in the right direction depending on interests and skills, and hands off to the appropriate team web page.
 
 This project is HTML, with CSS and Javascript. No special requirements. Most hosting platforms should be able to handle it easily.
-A php version, for Wordpress, is also included.
+A php version, for Wordpress, is also included in a separate dir. You can safely delete either the HTML or Wordpress dirs that you are not using.
+
 
 ## Installing Locally, or on a normal web host
 
     git clone https://github.com/ian-weisser/asknot asknot
     # Open `asknot/html/index.html` in your favorite browser!
+
+    One easy way to install:
+    cd /var/www (or wherever your webroot is...)
+    git clone https://github.com/ian-weisser/asknot
+    mv asknot/html/* ./   # Move the contents of 'html' to the webroot
+    rm -rf asknot         # Delete the rest
+
 
 ## Installing onto Wordpress as a child theme
 
@@ -20,6 +28,44 @@ A php version, for Wordpress, is also included.
         ?> 
     sudo ln -s asknot/wordpress /var/lib/wordpress/wp-content/themes/
     sudo ln -s asknot/wordpress /var/www/html/wordpress/wp-content/themes/
+
+## Important components
+
+index.html / guidance_wizard.php contain all the choice and list data. Make all content edits there first. Index.html includes 'cut above' and 'cut below' lines to convert it into guidance_wizard.php.
+
+style.css is almot identical to both HTML and Wordpress. The wordpress version contains a header section identifying the parent theme. Make all font and format edits there. In Wordpress, edit the header to identify the parent theme.
+
+guidance_wizard.js is identical to both HTML and Wordpress. Leave it alone. It requires JQuery, which is included in the HTML dir. It uses the version of JQuery included in Wordpress.
+
+functions.php is wordpress-only. It creates the html header for the parent and child themes style.css, JQuery, and guidance_wizard.js
+
+index.php is wordpress-only. It is the default template for pages and posts. It's not inccluded - you can copy much of this from the parent theme.
+
+contribute_page_template.php is wordpress-only example single-page template that includes the guidance wizard. As you can see, it's an ordinary page with atinly php code added:
+<?php
+  get_template_part( 'guidance_wizard' );
+?>
+
+
+## How it works in HTML
+
+Pretty simple: Three HTML header tags load JQuery.js, guidance_wizard.js, and style.css. Everything is local, and occurs inside the browser.
+
+index.html defines all the data.
+style.css defines how each type of data is displayed.
+guidance_wizard.js tracks which data you are looking at, and which data should come next.
+JQuery.js handles making the past-data invisible and the next-data visible.
+
+
+## How it works in Wordpress
+
+On your web browser, it works exactly the same. After Wordpress serves the page, everything is local to the browser.
+All the Wordpress magic simply crafts the right HTML file for Wordpress to serve.
+style.css defines this as a child theme (you get to choose which parent theme)
+A single-page template (you build this) tells Wordpress when to use the child theme, and tells Wordpress to include the correct content. 
+functions.php define the correct HTML headers for style.css, JQuery.js, and guidance_wizard.js
+
+Maintenance note: Since guidance_wizard.php is a separate file, you can give the maintainer direct control over editing content changes without compromising the rest of your install.
 
 
 ## Credits
