@@ -1,0 +1,122 @@
+.negative {
+    /* Used by guidance_wizard.js*/
+    display: none;
+}
+
+.visible {
+    /* Used by guidance_wizard.js*/
+    display: inline;
+}
+
+
+/* All data below here is identified with id="volunteer_wizard" to
+ * prevent name conflicts with other styles and services.
+ */
+
+
+#volunteer_wizard {
+    font-family: "Ubuntu";
+    /* font-weight: 300; */
+    text-shadow: 0 1px 0 #fff;
+    color: #333;
+    margin-top: 0px;
+    text-align: center;
+    padding-top: 60px;
+}
+
+
+#volunteer_wizard .question {   /* "How would you like to help?" */
+    display: none;
+    text-align: center;
+    padding: 20px 0 20px 0;
+    font-size: 16pt;
+    font-weight: 300;
+}
+
+#volunteer_wizard .choices li {  /* "Create..." */
+    display: none;
+    margin-left: -20px;   /* kludge to properly center the text */
+    font-size: 45pt;
+    font-weight: 400;
+}
+
+#volunteer_wizard .extra {  /* "...with the Ubuntu Security Team" */
+    color: #666;
+    font-size: 20pt;
+    font-weight: 200;
+    padding-bottom: 0.5em;
+}
+
+
+#volunteer_wizard #responses div {
+    margin-bottom: 0.5em; /* Vert spacing between buttons */
+    font-size: 20pt;      /* Button font size             */
+    font-weight: 500;
+    display:none;         /* In case JS is disabled       */
+}
+
+#volunteer_wizard #responses div a {  /* Each button */
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+    padding: 2px 10px 8px;
+    border-radius: 6px;
+    border: 0 none;
+}
+
+#volunteer_wizard #responses div a:hover {  /* Mouseover the button */
+    cursor: pointer;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset, 0px 3px 48px rgba(255,255,255,0.2) inset;
+}
+
+#volunteer_wizard #responses div a:active { /* Click the button */
+    cursor: pointer;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1) inset, 0 1px rgb(255, 255, 255, 0.1), 0px 3px 48px rgba(0,0,0,0.2) inset;
+}
+
+
+#volunteer_wizard #ok a { 
+    /* "Tell me more..." button
+     * Color palette: https://design.ubuntu.com/brand/colour-palette
+     * #DD4814 Ubuntu Orange 100%
+     * #E77E5A Ubuntu Orange  70%
+     */
+    background-color: #E77E5A;
+    background: -moz-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
+    background: -webkit-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
+    background: -o-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
+    background: linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
+}
+
+
+#volunteer_wizard #next a {
+    /* "No thanks, next..." button
+     * Color palette: https://design.ubuntu.com/brand/colour-palette
+     * #77216F Light Aubergine 100%
+     * #9F639A Light Augergine  70%
+     */
+    background-color: #9F639A;
+    background: -moz-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
+    background: -webkit-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
+    background: -o-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
+    background: linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
+}
+
+
+#volunteer_wizard #back a {
+    /* "I was wrong, take me back..." button
+     * Color palette: https://design.ubuntu.com/brand/colour-palette
+     * #AEA79F Warm Grey 100%
+     * #C6C1BB Warm Grey  70%
+     */
+    background-color: #C6C1BB;
+    background: -moz-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
+    background: -webkit-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
+    background: -o-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
+    background: linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
+}
+
+
