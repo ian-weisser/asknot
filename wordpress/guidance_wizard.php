@@ -4,11 +4,11 @@
     <div class="group" id="toplevel">
       <p class="question">How would you like to help?<br/>What scratches your itch?</p>
       <ul class="choices">
-        <li next-group="advocate"><h2>Advocacy</h2></li>
-        <li next-group="communicate"><h2>Writing and editing</h2></li>
-        <li next-group="develop"><h2>Coding and development</h2></li>
-        <li next-group="quality"><h2>Quality and design</h2></li>
-        <li next-group="support"><h2>Support</h2></li>
+        <li next-group="advocate"><h3>Advocacy</h3></li>
+        <li next-group="communicate"><h3>Writing and editing</h3></li>
+        <li next-group="develop"><h3>Coding and development</h3></li>
+        <li next-group="quality"><h3>Quality and design</h3></li>
+        <li next-group="support"><h3>Support</h3></li>
       </ul>
     </div>
 
@@ -17,13 +17,13 @@
     <div class="group" id="advocate">
       <p class="question">So you want to well the world about Ubuntu?<br/>You could help</p>
       <ul class="choices">
-        <li target="http://www.spreadubuntu.org/en/spreadubuntu-our-project"><h2>Create</h2>
+        <li target="http://www.spreadubuntu.org/en/spreadubuntu-our-project"><h3>Create</h3>
           <p class="extra">Create materials for the Spreadubuntu project</p>
         </li>
-        <li target="http://www.spreadubuntu.org/"><h2>Persuade</h2>
+        <li target="http://www.spreadubuntu.org/"><h3>Persuade</h3>
           <p class="extra">Evangelize with the Spreadubuntu project</p>
         </li>
-        <li target="https://wiki.ubuntu.com/StartUbuntu#HOWTO_Help.3F"><h2>Convert WinXP users</h2>
+        <li target="https://wiki.ubuntu.com/StartUbuntu#HOWTO_Help.3F"><h3>Convert WinXP users</h3>
           <p class="extra">Evangelize with the Startubuntu project</p>
         </li>
       </ul>
@@ -34,25 +34,25 @@
     <div class="group" id="communicate">
       <p class="question">So you have a mighty pen?<br/>You could help</p>
       <ul class="choices">
-        <li target="https://wiki.ubuntu.com/UbuntuWeeklyNewsletter/Join"><h2>Interview</h2>
+        <li target="https://wiki.ubuntu.com/UbuntuWeeklyNewsletter/Join"><h3>Interview</h3>
           <p class="extra">Get the message across in the Ubuntu Weekly News</p>
         </li>
-        <li target="https://wiki.ubuntu.com/Classroom"><h2>Teach
+        <li target="https://wiki.ubuntu.com/Classroom"><h3>Teach
           <p class="extra">Share your knowledge and skills in Ubuntu Classroom</p>
         </li>
-        <li target="http://community.ubuntu.com/contribute/translations/"><h2>Translate</h2>
+        <li target="http://community.ubuntu.com/contribute/translations/"><h3>Translate</h3>
           <p class="extra">Help make Ubuntu accessible to everyone</p>
         </li>
-        <li target="https://wiki.ubuntu.com/DocumentationTeam"><h2>Edit and update documentation</h2>
+        <li target="https://wiki.ubuntu.com/DocumentationTeam"><h3>Edit and update documentation</h3>
           <p class="extra">with the Ubuntu Documentation Team</p>
         </li>
-        <li target="https://wiki.ubuntu.com/UbuntuWeeklyNewsletter/Join"><h2>Write/edit news copy</h2>
+        <li target="https://wiki.ubuntu.com/UbuntuWeeklyNewsletter/Join"><h3>Write/edit news copy</h3>
           <p class="extra">for the Ubuntu Weekly News</p>
         </li>
-        <li target="http://ubuntuforums.org/forumdisplay.php?f=100"><h2>Compile tutorials</h2>
+        <li target="http://ubuntuforums.org/forumdisplay.php?f=100"><h3>Compile tutorials</h3>
           <p class="extra">for the Ubuntu Forums</p>
         </li>
-        <li target="http://askubuntu.com/"><h2>Edit</h2>
+        <li target="http://askubuntu.com/"><h3>Edit</h3>
           <p class="extra">questions and answers at AskUbuntu</p>
         </li>
       </ul>
@@ -63,34 +63,34 @@
     <div class="group" id="develop">
       <p class="question">So you want to change the world with great software?<br/>You could help</p>
       <ul class="choices">
-        <li target="https://wiki.ubuntu.com/QATeam/Roles/BugTriager"><h2>Triage bugs</h2>
+        <li target="https://wiki.ubuntu.com/QATeam/Roles/BugTriager"><h3>Triage bugs</h3>
           <p class="extra">with the Ubuntu QA Team</p>
         </li>
-        <li target="https://wiki.ubuntu.com/One%20Hundred%20Papercuts"><h2>Patch simple bugs</h2>
+        <li target="https://wiki.ubuntu.com/One%20Hundred%20Papercuts"><h3>Patch simple bugs</h3>
           <p class="extra">with the One Hundred Papercuts Project</p>
         </li>
-        <li target="http://developer.ubuntu.com/"><h2>Develop applications</h2>
+        <li target="http://developer.ubuntu.com/"><h3>Develop applications</h3>
           <p class="extra">for Cloud, Server, Desktop, Tablet, and/or Phone</p>
         </li>
-        <li target="https://wiki.ubuntu.com/FoundationsTeam"><h2>Improve the core OS</h2>
+        <li target="https://wiki.ubuntu.com/FoundationsTeam"><h3>Improve the core OS</h3>
           <p class="extra">with the Ubuntu Foundations Team</p>
         </li>
-        <li target="https://wiki.ubuntu.com/QATeam/Roles/Developer"><h2>Create infrastructure tools</h2>
+        <li target="https://wiki.ubuntu.com/QATeam/Roles/Developer"><h3>Create infrastructure tools</h3>
           <p class="extra">with the Ubuntu QA Team</p>
         </li>
-        <li target="http://packaging.ubuntu.com/"><h2>Package software</h2>
+        <li target="http://packaging.ubuntu.com/"><h3>Package software</h3>
           <p class="extra">to add to Ubuntu</p>
         </li>
-        <li target="https://wiki.ubuntu.com/SecurityTeam/GettingInvolved"><h2>Protect millions</h2>
+        <li target="https://wiki.ubuntu.com/SecurityTeam/GettingInvolved"><h3>Protect millions</h3>
           <p class="extra">with the Ubuntu Security Team</p>
         </li>
-        <li target="https://wiki.ubuntu.com/QATeam/Roles/TestWriter"><h2>Write automated tests</h2>
+        <li target="https://wiki.ubuntu.com/QATeam/Roles/TestWriter"><h3>Write automated tests</h3>
           <p class="extra">with the Ubuntu QA Team</p>
         </li>
-        <li target="https://wiki.ubuntu.com/QATeam/Roles/Tester"><h2>Test the development release</h2>
+        <li target="https://wiki.ubuntu.com/QATeam/Roles/Tester"><h3>Test the development release</h3>
           <p class="extra">with the Ubuntu QA Team</p>
         </li>
-        <li target="http://community.ubuntu.com/contribute/design/"><h2>Visual experience</h2>
+        <li target="http://community.ubuntu.com/contribute/design/"><h3>Visual experience</h3>
           <p class="extra">Wallpapers, art, and user experience design</p>
         </li>
       </ul>
@@ -101,25 +101,25 @@
     <div class="group" id="quality">
       <p class="question">So you enjoy finding programmer mistakes?<br/>You could help</p>
       <ul class="choices">
-        <li target="https://wiki.ubuntu.com/FoundationsTeam"><h2>Improve the core OS</h2>
+        <li target="https://wiki.ubuntu.com/FoundationsTeam"><h3>Improve the core OS</h3>
           <p class="extra">with the Ubuntu Foundations Team</p>
         </li>
-        <li target="http://community.ubuntu.com/contribute/design/"><h2>User experience</h2>
+        <li target="http://community.ubuntu.com/contribute/design/"><h3>User experience</h3>
           <p class="extra">Designing for the Desktop, Tablet, and Phone</p>
         </li>
-        <li target="https://wiki.ubuntu.com/QATeam/Roles/Developer"><h2>Create infrastructure tools</h2>
+        <li target="https://wiki.ubuntu.com/QATeam/Roles/Developer"><h3>Create infrastructure tools</h3>
           <p class="extra">with the Ubuntu QA Team</p>
         </li>
-        <li target="https://wiki.ubuntu.com/SecurityTeam/GettingInvolved"><h2>Protect millions</h2>
+        <li target="https://wiki.ubuntu.com/SecurityTeam/GettingInvolved"><h3>Protect millions</h3>
           <p class="extra">with the Ubuntu Security Team</p>
         </li>
-        <li target="https://wiki.ubuntu.com/QATeam/Roles/TestWriter"><h2>Write automated tests</h2>
+        <li target="https://wiki.ubuntu.com/QATeam/Roles/TestWriter"><h3>Write automated tests</h3>
           <p class="extra">with the Ubuntu QA Team</p>
         </li>
-        <li target="https://wiki.ubuntu.com/QATeam/Roles/Tester"><h2>Test the development release</h2>
+        <li target="https://wiki.ubuntu.com/QATeam/Roles/Tester"><h3>Test the development release</h3>
           <p class="extra">with the Ubuntu QA Team</p>
         </li>
-        <li target="https://wiki.ubuntu.com/QATeam/Roles/BugTriager"><h2>Triage bugs</h2>
+        <li target="https://wiki.ubuntu.com/QATeam/Roles/BugTriager"><h3>Triage bugs</h3>
           <p class="extra">with the Ubuntu QA Team</p>
         </li>
       </ul>
@@ -130,28 +130,28 @@
     <div class="group" id="support">
       <p class="question">So you like helping people?<br/>You could help</p>
       <ul class="choices">
-        <li target="http://ubuntuforums.org/forumdisplay.php?f=100"><h2>Compile tutorials</h2>
+        <li target="http://ubuntuforums.org/forumdisplay.php?f=100"><h3>Compile tutorials</h3>
           <p class="extra">for the Ubuntu Forums</p>
         </li>
-        <li target="http://ubuntuforums.org/"><h2>Provide one-on-one support</h2>
+        <li target="http://ubuntuforums.org/"><h3>Provide one-on-one support</h3>
           <p class="extra">for the Ubuntu Forums</p>
         </li>
-        <li target="http://askubuntu.com/"><h2>Answer questions</h2>
+        <li target="http://askubuntu.com/"><h3>Answer questions</h3>
           <p class="extra">at AskUbuntu</p>
         </li>
-        <li target="http://askubuntu.com/"><h2>Edit and refine answers</h2>
+        <li target="http://askubuntu.com/"><h3>Edit and refine answers</h3>
           <p class="extra">at AskUbuntu</p>
         </li>
-        <li target="http://ubuntuforums.org/forumdisplay.php?f=100"><h2>Compile tutorials</h2>
+        <li target="http://ubuntuforums.org/forumdisplay.php?f=100"><h3>Compile tutorials</h3>
           <p class="extra">for the Ubuntu Forums</p>
         </li>
-        <li target="http://answers.launchpad.com/"><h2>Compile FAQs</h2>
+        <li target="http://answers.launchpad.com/"><h3>Compile FAQs</h3>
           <p class="extra">at Launchpad Answers</p>
         </li>
-        <li target="http://community.ubuntu.com/contribute/documentation/"><h2>Improve documentation</h2>
+        <li target="http://community.ubuntu.com/contribute/documentation/"><h3>Improve documentation</h3>
           <p class="extra">with the Ubuntu Documentation Team</p>
         </li>
-        <li target="https://wiki.ubuntu.com/Classroom"><h2>Teach</h2>
+        <li target="https://wiki.ubuntu.com/Classroom"><h3>Teach</h3>
           <p class="extra">Share your knowledge and skills in Ubuntu Classroom</p>
         </li>
       </ul>

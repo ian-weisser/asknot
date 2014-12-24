@@ -15,43 +15,27 @@
 
 
 #volunteer_wizard {
-    font-family: "Ubuntu";
-    /* font-weight: 300; */
-    text-shadow: 0 1px 0 #fff;
-    color: #333;
-    margin-top: 0px;
-    text-align: center;
-    padding-top: 60px;
 }
 
 
 #volunteer_wizard .question {   /* "How would you like to help?" */
     display: none;
-    text-align: center;
     padding: 20px 0 20px 0;
-    font-size: 16pt;
-    font-weight: 300;
 }
 
 #volunteer_wizard .choices li {  /* "Create..." */
+    /* includes .extra below */
     display: none;
-    margin-left: -20px;   /* kludge to properly center the text */
-    font-size: 45pt;
-    font-weight: 400;
 }
 
 #volunteer_wizard .extra {  /* "...with the Ubuntu Security Team" */
-    color: #666;
-    font-size: 20pt;
-    font-weight: 200;
-    padding-bottom: 0.5em;
+    /* .extra is part of .choices li above */
 }
 
 
 #volunteer_wizard #responses div {
-    margin-bottom: 0.5em; /* Vert spacing between buttons */
-    font-size: 20pt;      /* Button font size             */
-    font-weight: 500;
+    padding-left: 40px;   /* Match the .choices li indent*/
+    margin-bottom: 0.75em; /* Vert spacing between buttons */
     display:none;         /* In case JS is disabled       */
 }
 
@@ -59,7 +43,7 @@
     text-decoration: none;
     color: #fff;
     text-shadow: 0 1px 0 rgba(0,0,0,0.5);
-    padding: 2px 10px 8px;
+    padding: 2px 10px 4px 10px;
     border-radius: 6px;
     border: 0 none;
 }
@@ -86,7 +70,7 @@
     background: -webkit-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
     background: -o-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
     background: linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
-    box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
 }
 
 
@@ -101,7 +85,7 @@
     background: -webkit-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
     background: -o-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
     background: linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
-    box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
 }
 
 
@@ -116,7 +100,7 @@
     background: -webkit-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
     background: -o-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
     background: linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
-    box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
 }
 
 
