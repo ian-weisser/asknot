@@ -1,55 +1,60 @@
 Ask not what Ubuntu can do for you but what you can do for Ubuntu? 
 
-A starting place for contributors to look for projects to work on, This html gently guides users in the right direction depending on interests and skills, and hands off to the appropriate team web page.
+A starting place for contributors to look for projects to work on, this html-based wizard gently guides users in the right direction depending on interests and skills, and hands off to the appropriate team web page. It's easy to edit the content, and it should properly inherit your web site's custom CSS or Wordpress Theme.
 
 This project is HTML, with CSS and Javascript. No special requirements. Most hosting platforms should be able to handle it easily.
-A php version, for Wordpress, is also included in a separate dir. You can safely delete either the HTML or Wordpress dirs that you are not using.
+
+A version for Wordpress, is also included in a separate dir. You can safely delete either the HTML or Wordpress dirs that you are not using.
 
 
-## Installing Locally, or on a normal web host
+## Try it out without installing anything
 
-    git clone https://github.com/ian-weisser/asknot asknot
+    git clone https://github.com/ian-weisser/asknot
     # Open `asknot/html/index.html` in your favorite browser!
 
-    One easy way to install:
-    cd /var/www (or wherever your webroot is...)
+
+## Installing as a standalone web page
+
+    cd /path/to/your/web/dir/
     git clone https://github.com/ian-weisser/asknot
-    mv asknot/html/* ./   # Move the contents of 'html' to the webroot
+    mv asknot/html/* ./   # Move the contents of 'html' to the web dir
     rm -rf asknot         # Delete the rest
 
 
 ## Installing onto Wordpress as a child theme
 
-    git clone https://github.com/ian-weisser/asknot asknot
-    # Edit style.css header to match the desired parent theme name and version
+    git clone https://github.com/ian-weisser/asknot
+    sudo ln -s asknot/wordpress /var/lib/wordpress/wp-content/themes/
+    sudo ln -s asknot/wordpress /var/www/html/wordpress/wp-content/themes/
+    # Edit the header of style.css to match your desired parent theme name and version
     # Create (or edit) a custom page template. Add the following code in the place you want the guidance wizard to be located:
         <?php
           get_template_part( 'guidance_wizard' );
         ?> 
-    sudo ln -s asknot/wordpress /var/lib/wordpress/wp-content/themes/
-    sudo ln -s asknot/wordpress /var/www/html/wordpress/wp-content/themes/
+
 
 ## Important components
 
-index.html / guidance_wizard.php contain all the choice and list data. Make all content edits there first. Index.html includes 'cut above' and 'cut below' lines to convert it into guidance_wizard.php.
+*index.html* (non-Wordpress version) and *guidance_wizard.php* (Wordpress version) contain all the choice and list data. Make all content edits there.
 
-style.css is almot identical to both HTML and Wordpress. The wordpress version contains a header section identifying the parent theme. Make all font and format edits there. In Wordpress, edit the header to identify the parent theme.
+*style.css* (non-Wordpress version) and *guidance_wizard.css* (Wordpress version) contain all the formatting, size, color, and placement information. Make all font and format edits there. Most CSS is tied to a specific ID in HTML to prevent name conflicts with parent themes or other services you may have going. In Wordpress, the style.css is a header only to identify the theme. Edit style.css to identify the parent theme.
 
-guidance_wizard.js is identical to both HTML and Wordpress. Leave it alone. It requires JQuery, which is included in the HTML dir. It uses the version of JQuery included in Wordpress.
+*guidance_wizard.js* is identical in both non-Wordpress and Wordpress versions. Leave it alone. It requires JQuery, which is included in the HTML dir. Wordpress includes it's own compatible version of JQuery.
 
-functions.php is wordpress-only. It creates the html header for the parent and child themes style.css, JQuery, and guidance_wizard.js
+*functions.php* is wordpress-only. It creates the html header for the parent and child themes style.css, guidance_wizard.css, JQuery, and guidance_wizard.js
 
-index.php is wordpress-only. It is the default template for pages and posts. It's not inccluded - you can copy much of this from the parent theme.
+*index.php* is wordpress-only. It is the default template for pages and posts. It's not included - you can copy much of this from the parent theme.
 
-contribute_page_template.php is wordpress-only example single-page template that includes the guidance wizard. As you can see, it's an ordinary page with atinly php code added:
-<?php
-  get_template_part( 'guidance_wizard' );
-?>
+*contribute_page_template.php* is wordpress-only example single-page template that includes the guidance wizard. As you can see, it's an ordinary page with atinly php code added:
+
+    <?php
+    get_template_part( 'guidance_wizard' );
+    ?>
 
 
 ## How it works in HTML
 
-Pretty simple: Three HTML header tags load JQuery.js, guidance_wizard.js, and style.css. Everything is local, and occurs inside the browser.
+Pretty simple: Three HTML header tags load JQuery.js, guidance_wizard.js, and style.css. Everything is local (client-side), and occurs inside the browser.
 
 index.html defines all the data.
 style.css defines how each type of data is displayed.
@@ -60,10 +65,14 @@ JQuery.js handles making the past-data invisible and the next-data visible.
 ## How it works in Wordpress
 
 On your web browser, it works exactly the same. After Wordpress serves the page, everything is local to the browser.
-All the Wordpress magic simply crafts the right HTML file for Wordpress to serve.
-style.css defines this as a child theme (you get to choose which parent theme)
+
+All the Wordpress stuff simply crafts the right HTML file for Wordpress to serve.
+
+*style.css* defines this as a child theme (you get to choose which parent theme)
+
 A single-page template (you build this) tells Wordpress when to use the child theme, and tells Wordpress to include the correct content. 
-functions.php define the correct HTML headers for style.css, JQuery.js, and guidance_wizard.js
+
+*functions.php* define the correct HTML headers for style.css, guidance_wizard.css, JQuery.js, and guidance_wizard.js
 
 Maintenance note: Since guidance_wizard.php is a separate file, you can give the maintainer direct control over editing content changes without compromising the rest of your install.
 
@@ -76,45 +85,43 @@ A big THANK YOU to all the Mozilla contributors who made this cool software, and
 
 The complete list of contributors who have our gratitude is at https://github.com/ian-weisser/asknot/contributors
 
+
 ## Editing the choices
 
-Edit the colors, fonts, and spacing in the `style.css` file.
-Edit content in the `index.html` and/or `guidance_wizard.php` files.
+Let's pretend to add a new top-level choice 'Wrestling' to go along with Advocacy, Development, etc.
 
-Content uses a simple tree structure:
+All changes take place in index.html. You don't need to touch any of the other files.
 
-    toplevel   # Each item in the toplevel group must have it's own subgroup below
-        advocacy
-        development
-        support
+*First*, let's add the actual list entry in toplevel. 
+- We need a string ("Wrestling")
+- We need a subgroup ID ('wrestle')
 
-    advocacy  # Each item in this subgroup is linked to a different landing page
-        create: http://link
-        persuade: http://link
-        convert: http://link
 
-    development # Each item in this subgroup has it's own sub-sub-group below
-        C++
-	Python
-	Ruby
+    <div class="group" id="toplevel">
+      <span class="question">How would you like to help?<br/>What scratches your itch?
+      <ul class="choices">
+        <li next-group="advocate">Advocacy</li>
+        ***<li next-group="wrestle">Wrestling</li>****     <---- Here it is
+        <li next-group="develop">Coding and development</span></li>
+        <li next-group="support">Support</span></li>
+      </ul>
+    </div>
 
-    ...
+*Second*, let's create the subgroup with three choices.
+- The entire subgroup should have an intro string or *question* ("So you like to dress down?")
+- Each choice should include a string ("Professional!")
+- Some choices may include an expanded description ("best acting job in town")
+- Each choice should include a landing URL (http://example.com/pro_wrestling)
 
-To add or delete content:
-- Ensure the toplevel category item ('advocacy') matches a subcategory name.
-- You can have multiple levels of lists.
-- List items cannot be mixed with link items (unless you edit the javascript to make it possible)
+    <div class="group" id="wrestle">   <--- There's that subgroup ID
+      <span class="question">So you like to dress down?</span>
+      <ul class="choices">
+        <li target="http://example.com/pro_wrestling">Professional!
+          <div class="extra">best acting job in town!</div>
+        </li>
+        <li target="http://example.com/amateur_wrestling">Amateur</li>
+                <--- No 'extra' on this item
+      </ul>
+    </div>
 
-How it's put together:
-
-Each group is a list of choices in it's own DIV <div class="group" id="advocacy">
-
-The whole group is headed by a single "question" field: <span class="question">What scratches your itch?</span>
-
-Each group is made up of multiple "choices" Each choice in the list contains the choice text, some extra test, and points to a "next-group" or to an URL "target": 
-<ul class="choices">
-  <li target="http://upstream-project">Create!!
-     <div class="extra">Build cool stuff upstream</div>
-  </li>
-  ...more choices...
-</ul>
+*Third*, ...no, wait. That was it. Try running it.
