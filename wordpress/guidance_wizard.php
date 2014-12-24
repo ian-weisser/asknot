@@ -1,13 +1,13 @@
 <div id="volunteer_wizard"> <!-- The entire wizard is inside this div-->
 
   <div class="group" id="toplevel">
-    <span class="question">How would you like to help?<br/>What scratches your itch?
+    <span class="question">How would you like to help?<br/>What scratches your itch?</span>
     <ul class="choices">
       <li next-group="advocate">Advocacy</li>
-      <li next-group="communicate">Writing and editing</span></li>
-      <li next-group="develop">Coding and development</span></li>
-      <li next-group="quality">Quality and design</span></li>
-      <li next-group="support">Support</span></li>
+      <li next-group="communicate">Writing and editing</li>
+      <li next-group="develop">Coding and development</li>
+      <li next-group="quality">Quality and design</li>
+      <li next-group="support">Support</li>
     </ul>
   </div>
 

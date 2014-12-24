@@ -161,11 +161,20 @@
       return !! (window.history && history.pushState);
     }
 
+    /* End supporting functions */
+
+
+    /* Begin JQuery and Window functions */
+
+    jQuery(document).ready(function() {
+        $('#responses div').show();
+    })
 
     window.onpopstate = function(event) {
     }
 
-    $(window).load(function() {
+    /* $(window).load(function() { */
+    jQuery(window).load(function() {
         $('#ok a:first').on('click', investigate);
         $('#next a:first').on('click', nextChoice);
         $('#back a:first').on('click', takeBack);
