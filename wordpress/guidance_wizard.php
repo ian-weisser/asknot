@@ -1,3 +1,9 @@
+  <div id="volunteer_wizard_intro">
+    <h2>Volunteers Wanted</h2>
+    <p>Browse some of the volunteer roles available. Sign up and try one.
+  </div>
+
+
 
   <div id="volunteer_wizard">
 
