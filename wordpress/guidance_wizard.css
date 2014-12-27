@@ -14,28 +14,37 @@
  */
 
 #volunteer_wizard_intro {
-    padding-left: 40px; /* Matches rest of the page content */
+    position: relative;
+    left: 40px;         /* Matches rest of the page content */
 }
 
-/* Unused
-#volunteer_wizard_intro img {
-    height: 40px;
-    vertical-align: middle; 
-}*/
-
-#volunteer_wizard {  /* div contains all data and js activity */
-    padding-left: 40px /* Matches the rest of page content */
+#volunteer_wizard {     /* div contains all data and js activity */
+    position: relative;
+    left: 40px          /* Matches the rest of page content */
 }
 
-#volunteer_wizard .question {   /* "How would you like to help?" */
-    display: none;
-}
+
+/* The question line is indented 40px (#volunteer_wizard),
+ * then has a 50x50 icon at 40px 
+ * then has the text .question at 95px
+ */
 
 #volunteer_wizard .question img {
     height: 50px;
+    width:  50px;
     vertical-align: middle;
-    padding: 0 5px 0 0; /* 5px right side gutter btwn img and text */ 
+    position: relative;
+    right: 5px
+    /*padding: 0 5px 0 0; /* 5px right side gutter btwn img and text */ 
 }
+
+#volunteer_wizard .question {   /* "How would you like to help?" */
+    position: relative;
+    left: 10px;
+    display: none;
+}
+
+
 
 #volunteer_wizard .choices li {  /* "Create..." */
     /* includes .extra below */
@@ -48,14 +57,38 @@
 }
 
 
+/* Three possible reposnses (Tell me more, Next, Back)
+ *
+ * Each response includes a link, which in turn contains an icon
+ * (img) at 60px and a colored button with text (.textbutton) at 90px
+ *
+ * Textbuttons also have events for mouseover and click.
+ * 
+ * Button colors are from https://design.ubuntu.com/brand/colour-palette 
+ */
+
+
 #volunteer_wizard #responses div {
-    padding-left: 40px;   /* Match the .choices li indent*/
+    /* Generic div-wide behavior */
     margin-bottom: 0.75em; /* Vert spacing between buttons */
-    display:none;         /* In case JS is disabled       */
+    display:none;          /* In case JS is disabled       */
 }
 
-#volunteer_wizard #responses div a {  /* Each button */
-    text-decoration: none;
+#volunteer_wizard #responses a { 
+    text-decoration: none; /* Hide the link underline in all buttons */
+}
+
+#volunteer_wizard #responses img {
+    /* Generic for all icons */
+    position: relative;
+    left: 60px;
+    height: 25px;
+    width:  25px;
+    vertical-align:middle;
+}
+
+#volunteer_wizard #responses .textbutton {
+    /* Generic for all buttons */
     color: #fff;
     text-shadow: 0 1px 0 rgba(0,0,0,0.5);
     padding: 2px 10px 4px 5px;
@@ -63,28 +96,26 @@
     border: 0 none;
 }
 
-#volunteer_wizard #responses div a:hover {  /* Mouseover the button */
+#volunteer_wizard #responses .textbutton:hover {
+    /* Mouseover event all buttons */
     cursor: pointer;
     box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset, 0px 3px 48px rgba(255,255,255,0.2) inset;
 }
 
-#volunteer_wizard #responses div a:active { /* Click the button */
+#volunteer_wizard #responses .textbutton:active { 
+    /* Click event all buttons */
     cursor: pointer;
     box-shadow: 0 3px rgba(0, 0, 0, 0.1) inset, 0 1px rgb(255, 255, 255, 0.1), 0px 3px 48px rgba(0,0,0,0.2) inset;
 }
 
-#volunteer_wizard #responses img {
-    height: 25px;
-    vertical-align:middle;
-    padding: 0 10px 0 5px;
-} 
 
-#volunteer_wizard #ok a { 
+#volunteer_wizard #ok .textbutton { 
     /* "Tell me more..." button
-     * Color palette: https://design.ubuntu.com/brand/colour-palette
      * #DD4814 Ubuntu Orange 100%
      * #E77E5A Ubuntu Orange  70%
      */
+    position: relative;
+    left: 65px;
     background-color: #E77E5A;
     background: -moz-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
     background: -webkit-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
@@ -94,12 +125,13 @@
 }
 
 
-#volunteer_wizard #next a {
+#volunteer_wizard #next .textbutton {
     /* "No thanks, next..." button
-     * Color palette: https://design.ubuntu.com/brand/colour-palette
      * #77216F Light Aubergine 100%
      * #9F639A Light Augergine  70%
      */
+    position: relative;
+    left: 60px;
     background-color: #9F639A;
     background: -moz-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
     background: -webkit-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
@@ -109,12 +141,13 @@
 }
 
 
-#volunteer_wizard #back a {
+#volunteer_wizard #back .textbutton {
     /* "I was wrong, take me back..." button
-     * Color palette: https://design.ubuntu.com/brand/colour-palette
      * #AEA79F Warm Grey 100%
      * #C6C1BB Warm Grey  70%
      */
+    position: relative;
+    left: 65px;
     background-color: #C6C1BB;
     background: -moz-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
     background: -webkit-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
@@ -122,4 +155,6 @@
     background: linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
     box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
 }
+
+
 
