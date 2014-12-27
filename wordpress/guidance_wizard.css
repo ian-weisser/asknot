@@ -13,24 +13,33 @@
  * prevent name conflicts with other styles and services.
  */
 
-
 #volunteer_wizard_intro {
-    padding-left: 40px;
+    padding-left: 40px; /* Matches rest of the page content */
 }
 
+/* Unused
+#volunteer_wizard_intro img {
+    height: 40px;
+    vertical-align: middle; 
+}*/
 
-#volunteer_wizard {
-    padding-left: 40px;
+#volunteer_wizard {  /* div contains all data and js activity */
+    padding-left: 40px /* Matches the rest of page content */
 }
-
 
 #volunteer_wizard .question {   /* "How would you like to help?" */
     display: none;
-    padding: 20px 0 20px 0;
+}
+
+#volunteer_wizard .question img {
+    height: 50px;
+    vertical-align: middle;
+    padding: 0 5px 0 0; /* 5px right side gutter btwn img and text */ 
 }
 
 #volunteer_wizard .choices li {  /* "Create..." */
     /* includes .extra below */
+    list-style-type: none; /* No bullets */
     display: none;
 }
 
@@ -49,7 +58,7 @@
     text-decoration: none;
     color: #fff;
     text-shadow: 0 1px 0 rgba(0,0,0,0.5);
-    padding: 2px 10px 4px 10px;
+    padding: 2px 10px 4px 5px;
     border-radius: 6px;
     border: 0 none;
 }
@@ -64,6 +73,11 @@
     box-shadow: 0 3px rgba(0, 0, 0, 0.1) inset, 0 1px rgb(255, 255, 255, 0.1), 0px 3px 48px rgba(0,0,0,0.2) inset;
 }
 
+#volunteer_wizard #responses img {
+    height: 25px;
+    vertical-align:middle;
+    padding: 0 10px 0 5px;
+} 
 
 #volunteer_wizard #ok a { 
     /* "Tell me more..." button
@@ -108,5 +122,4 @@
     background: linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
     box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
 }
-
 

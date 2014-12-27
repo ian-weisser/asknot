@@ -1,6 +1,6 @@
   <div id="volunteer_wizard_intro">
     <h2>Volunteers Wanted</h2>
-    <p>Browse some of the volunteer roles available. Sign up and try one.
+    <p>Browse some of the volunteer roles available. Explore using the buttons below.
   </div>
 
 
@@ -8,7 +8,7 @@
   <div id="volunteer_wizard">
 
     <div class="group" id="toplevel">
-      <p class="question">How would you like to help?<br/>What scratches your itch?</p>
+      <p class="question"><img src="http://design.ubuntu.com/wp-content/uploads/pictogram-community-orange-hex.svg">How would you like to help? What scratches your itch?</p>
       <ul class="choices">
         <li next-group="advocate"><h3>Advocacy</h3></li>
         <li next-group="communicate"><h3>Writing and editing</h3></li>
@@ -21,7 +21,7 @@
 
 
     <div class="group" id="advocate">
-      <p class="question">So you want to well the world about Ubuntu?<br/>You could help</p>
+      <p class="question"><img src="http://design.ubuntu.com/wp-content/uploads/pictogram-quote-orange-hex.svg">Do you want to well the world about Ubuntu? You could help:</p>
       <ul class="choices">
         <li target="http://www.spreadubuntu.org/en/spreadubuntu-our-project"><h3>Create</h3>
           <p class="extra">Create materials for the Spreadubuntu project</p>
@@ -38,7 +38,7 @@
 
 
     <div class="group" id="communicate">
-      <p class="question">So you have a mighty pen?<br/>You could help</p>
+      <p class="question"><img src="http://design.ubuntu.com/wp-content/uploads/pictogram-camera-orange-hex.svg">Do you have a mighty pen? You could help:</p>
       <ul class="choices">
         <li target="https://wiki.ubuntu.com/UbuntuWeeklyNewsletter/Join"><h3>Interview</h3>
           <p class="extra">Get the message across in the Ubuntu Weekly News</p>
@@ -67,7 +67,7 @@
 
 
     <div class="group" id="develop">
-      <p class="question">So you want to change the world with great software?<br/>You could help</p>
+      <p class="question"><img src="http://design.ubuntu.com/wp-content/uploads/pictogram-developer-orange-hex.svg">Do you want to change the world with great software? You could help:</p>
       <ul class="choices">
         <li target="https://wiki.ubuntu.com/QATeam/Roles/BugTriager"><h3>Triage bugs</h3>
           <p class="extra">with the Ubuntu QA Team</p>
@@ -105,7 +105,7 @@
 
 
     <div class="group" id="quality">
-      <p class="question">So you enjoy finding programmer mistakes?<br/>You could help</p>
+      <p class="question"><img src="http://design.ubuntu.com/wp-content/uploads/pictogram-dashboard-orange-hex.svg">Do you enjoy finding programmer mistakes? You could help:</p>
       <ul class="choices">
         <li target="https://wiki.ubuntu.com/FoundationsTeam"><h3>Improve the core OS</h3>
           <p class="extra">with the Ubuntu Foundations Team</p>
@@ -134,7 +134,7 @@
 
 
     <div class="group" id="support">
-      <p class="question">So you like helping people?<br/>You could help</p>
+      <p class="question"><img src="http://design.ubuntu.com/wp-content/uploads/pictogram-help-orange-hex.svg">Do you like helping people? You could help:</p>
       <ul class="choices">
         <li target="http://ubuntuforums.org/forumdisplay.php?f=100"><h3>Compile tutorials</h3>
           <p class="extra">for the Ubuntu Forums</p>
@@ -165,24 +165,28 @@
 
 
     <div id="responses">
-      <div id="ok"><a href="javascript:">Tell me more</a></div>
+      <div id="ok"><a href="javascript:"><img src="http://design.ubuntu.com/wp-content/uploads/pictogram-projects_we_love-orange-hex.svg">Tell me more</a></div>
+
       <div id="next">
-        <a href="javascript:">
-          <span class="negative">No, not interested</span>
+        <a href="javascript:"><img src="http://design.ubuntu.com/wp-content/uploads/pictogram-locations-orange-hex.svg">
+          <span class="negative">No thanks, try another</span>
           <span class="negative">Show me something else</span>
-          <span class="negative">Boring</span>
-          <span class="negative">Pffft, whatever</span>
-          <span class="negative">Not my line of expertise</span>
+          <span class="negative">Too dull, keep going</span>
+          <span class="negative">Not interested, keep looking</span>
+          <span class="negative">Not a good fit, next please</span>
           <span class="negative">Next please</span>
         </a>
       </div>
-      <div id="back"><a href="javascript:">I was wrong, take me back</a></div>
+
+      <div id="back"><a href="javascript:"><img src="http://design.ubuntu.com/wp-content/uploads/pictogram-delete-orange-hex.svg">I was wrong, take me back</a></div>
+
       <!-- message showing only if javascript disabled -->
       <noscript>
           <span>Please enable JavaScript in your browser!</span>
       </noscript>
       <!-- end of noscript message -->
-    </div>
+
+    </div> <!-- responses -->
 
   </div> <!-- volunteer_wizard -->
 
