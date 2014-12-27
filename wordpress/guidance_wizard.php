@@ -8,7 +8,7 @@
   <div id="volunteer_wizard">
 
     <div class="group" id="toplevel">
-      <p class="question"><img src="http://design.ubuntu.com/wp-content/uploads/pictogram-community-orange-hex.svg">How would you like to help? What scratches your itch?</p>
+      <p class="question"><img src="http://design.ubuntu.com/wp-content/uploads/pictogram-community-orange-hex.svg">I am interested in...</p>
       <ul class="choices">
         <li next-group="advocate"><h3>Advocacy</h3></li>
         <li next-group="communicate"><h3>Writing and editing</h3></li>
