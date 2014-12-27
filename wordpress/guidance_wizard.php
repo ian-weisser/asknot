@@ -21,7 +21,7 @@
 
 
     <div class="group" id="advocate">
-      <p class="question"><img src="http://design.ubuntu.com/wp-content/uploads/pictogram-quote-orange-hex.svg">Do you want to well the world about Ubuntu? You could help:</p>
+      <p class="question"><img src="http://design.ubuntu.com/wp-content/uploads/pictogram-quote-orange-hex.svg">Do you want to tell the world about Ubuntu? You could help:</p>
       <ul class="choices">
         <li target="http://www.spreadubuntu.org/en/spreadubuntu-our-project"><h3>Create</h3>
           <p class="extra">Create materials for the Spreadubuntu project</p>
