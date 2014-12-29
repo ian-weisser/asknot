@@ -48,10 +48,11 @@ A great landing page for each role is strongly recommended, but outside the scop
 
 *contribute_page_template.php* is wordpress-only example single-page template that includes the guidance wizard. As you can see, it's an ordinary page with atinly php code added:
 
-    <?php
-    get_template_part( 'guidance_wizard' );
-    ?>
-
+```
+<?php
+  get_template_part( 'guidance_wizard' );
+?>
+```
 
 ## How it works in HTML
 
@@ -106,16 +107,17 @@ All changes take place in index.html. You don't need to touch any of the other f
 - We need a string ("Wrestling")
 - We need a subgroup ID ('wrestle')
 
-
-    \<div class="group" id="toplevel">
-      \<span class="question">How would you like to help?<br/>What scratches your itch?
-      \<ul class="choices">
-        \<li next-group="advocate">Advocacy</li>
-         ***<li next-group="wrestle">Wrestling</li>****     <---- Here it is
-         <li next-group="develop">Coding and development</span></li>
-         <li next-group="support">Support</span></li>
-       </ul>
-     </div>
+```
+<div class="group" id="toplevel">
+    <p class="question"><img src="itch_icon.png">What scratches your itch?</p> <-- Icon and question
+    <ul class="choices">
+        <li next-group="advocate">Advocacy</li>
+        ***<li next-group="wrestle">Wrestling</li>****     <---- Here it is
+        <li next-group="develop">Coding and development</li>
+        <li next-group="support">Support</li>
+    </ul>
+</div>
+```
 
 *Second*, let's create the subgroup with three choices.
 - The entire subgroup should have an intro string or *question* ("So you like to dress down?")
@@ -123,15 +125,16 @@ All changes take place in index.html. You don't need to touch any of the other f
 - Some choices may include an expanded description ("best acting job in town")
 - Each choice should include a landing URL (http://example.com/pro_wrestling)
 
-    <div class="group" id="wrestle">   <--- There's that subgroup ID
-      <span class="question">So you like to dress down?</span>
-      <ul class="choices">
+```
+<div class="group" id="wrestle">   <--- There's that subgroup ID
+    <p class="question"><img src="wresle_icon.png">So you like to dress down?</p>  <-- Icon and question
+    <ul class="choices">
         <li target="http://example.com/pro_wrestling">Professional!
-          <div class="extra">best acting job in town!</div>
+            <p class="extra">best acting job in town!</p>
         </li>
         <li target="http://example.com/amateur_wrestling">Amateur</li>
                 <--- No 'extra' on this item
-      </ul>
-    </div>
-
+    </ul>
+</div>
+```
 *Third*, ...no, wait. That was it. Try running it.
