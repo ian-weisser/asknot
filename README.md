@@ -6,11 +6,12 @@ This project is HTML, with CSS and Javascript. No special requirements. Most hos
 
 A version for Wordpress, is also included in a separate dir. You can safely delete either the HTML or Wordpress dirs that you are not using.
 
+A great landing page for each role is strongly recommended, but outside the scope of this tool. A great landing page usually includes sections like: Welcome, prerequisites, how to get started, how to measure your progress, and how to ask for help.
 
 ## Try it out without installing anything
 
     git clone https://github.com/ian-weisser/asknot
-    # Open `asknot/html/index.html` in your favorite browser!
+    # Open `asknot/html/index.html` in your favorite browser.
 
 
 ## Installing as a standalone web page
@@ -74,7 +75,16 @@ A single-page template (you build this) tells Wordpress when to use the child th
 
 *functions.php* define the correct HTML headers for style.css, guidance_wizard.css, JQuery.js, and guidance_wizard.js
 
-Maintenance note: Since guidance_wizard.php is a separate file, you can give the maintainer direct control over editing content changes without compromising the rest of your install.
+
+## Maintenance
+
+Content is handled by the html/php file. You can change content by editing that file and nothing else.
+
+Wordpress editing: Since guidance_wizard.php is a separate file, you can give the maintainer direct control over editing content changes without compromising the rest of your install.
+
+Formatting, themes, and styles are all handled by the CSS file. The CSS does not include specific fonts or sizes - it should inherit whatever you specified in a previous CSS file or BODY tag. The CSS does have some spacing and physical layout (like indents) that you may wish to adjust to match your visual design.
+
+Logic is handled by the JS file. THe logic required that each menu of choices must either be a set of submenus or a set of final destination links - you cannot mix them. If you fix this in the JS, please push a patch this way!
 
 
 ## Credits
@@ -97,15 +107,15 @@ All changes take place in index.html. You don't need to touch any of the other f
 - We need a subgroup ID ('wrestle')
 
 
-    <div class="group" id="toplevel">
-      <span class="question">How would you like to help?<br/>What scratches your itch?
-      <ul class="choices">
-        <li next-group="advocate">Advocacy</li>
-        ***<li next-group="wrestle">Wrestling</li>****     <---- Here it is
-        <li next-group="develop">Coding and development</span></li>
-        <li next-group="support">Support</span></li>
-      </ul>
-    </div>
+    \<div class="group" id="toplevel">
+      \<span class="question">How would you like to help?<br/>What scratches your itch?
+      \<ul class="choices">
+        \<li next-group="advocate">Advocacy</li>
+         ***<li next-group="wrestle">Wrestling</li>****     <---- Here it is
+         <li next-group="develop">Coding and development</span></li>
+         <li next-group="support">Support</span></li>
+       </ul>
+     </div>
 
 *Second*, let's create the subgroup with three choices.
 - The entire subgroup should have an intro string or *question* ("So you like to dress down?")
