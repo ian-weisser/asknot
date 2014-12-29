@@ -85,7 +85,7 @@ Wordpress editing: Since guidance_wizard.php is a separate file, you can give th
 
 Formatting, themes, and styles are all handled by the CSS file. The CSS does not include specific fonts or sizes - it should inherit whatever you specified in a previous CSS file or BODY tag. The CSS does have some spacing and physical layout (like indents) that you may wish to adjust to match your visual design.
 
-Logic is handled by the JS file. THe logic required that each menu of choices must either be a set of submenus or a set of final destination links - you cannot mix them. If you fix this in the JS, please push a patch this way!
+Logic is handled by the JS file. The logic required that each menu of choices must either be a set of submenus or a set of final destination links - you cannot mix them. If you fix this in the JS, please push a patch this way!
 
 
 ## Credits
