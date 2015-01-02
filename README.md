@@ -48,30 +48,43 @@ This software has been tested against the communty.ubunntu.com style several way
     bzr branch lp:ubuntu-community-website  # Download the UCW style
     sudo ln -s ubuntu-community-website /var/lib/wordpress/wp-content/themes
 ```
-    guidance_wizard.css belongs in ubuntu-community-website/library/css/
-    juidance_wizard.js  belongs in ubuntu-community-website/library/js/
-    image files         belong  in ubuntu-community-website/library/images/pictograms/
 
-    index.php: includes the file guidance_wizard_header.stub. This stub pulls in the .js and .css files. The UCW theme doesn't use functions.php for enqueueing JS and CSS. 
+- guidance_wizard.css        belongs in ubuntu-community-website/library/css/
+- guidance_wizard.js         belongs in ubuntu-community-website/library/js/
+- guidance_wizard_header.php belongs in ubuntu-community-website/library/functions/
+- image files                belong  in ubuntu-community-website/library/images/pictograms/
+- index.php: Edit this file, and add the file guidance_wizard_header.php below the wp_header. This stub pulls in the .js and .css files. The UCW theme doesn't use functions.php for enqueueing JS and CSS. 
 
-Bug workaround: On your own pull of UCW for testing, the theme does not add jQuery, so the guidance wizard won't work. To load jQuery for testing, look in index.php for the guidance_wizard_header section and uncomment the jQuery loader. For production, jQuery is already loaded - leave commented.
+- (HTML in database) enter content.txt onto the page.
+- (HTML in php) guidance_wizard.php belongs in ubuntu_community_website/
 
-CSS Bug workaround: The 'Tell me more' and 'I made a mistake' buttons are indented 60px, but the 'Next, please' button is indented 65px to line up properly. See the comments in the CSS (#volunteer_wizard #next .textbutton) This works for standalone web and generic Wordpress. However, it casues a problem with the Ubuntu Community Website theme - change 65 back to 60 for UCW.
+jQuery Bug workaround: On your own pull of UCW for testing, the theme does not add jQuery, so the guidance wizard won't work. To load jQuery for testing.
+- (Testing) In guidance_wizard_header.php, uncomment the jQuery loader.
+- (Production) In guidance_wizard_header.php, leave the jQuery loader commented.
+
+CSS Bug workaround: The 'Tell me more' and 'I made a mistake' buttons are indented 60px, but the 'Next, please' button is indented 65px to line up properly. See the comments in the CSS (#volunteer_wizard #next .textbutton). This problem only occurs if you make a change in the HTML or wordpress_theme CSS, and copy those changes to UCW CSS.
+- In guidance_wizard.css, #volunteer_wizard #next .textbutton, change '65px' back to '60px'.
 
 
 ## Important components
 
-*index.html* (non-Wordpress version) and *guidance_wizard.php* (Wordpress version) contain all the choice and list data. Make all content edits there.
+*index.html* (html),
+*guidance_wizard.php* (wordpress_theme, ucw_php), and
+*content.txt* (ucw_content) contain all the choice and list data. Make all content edits there. If using ucw_content, manually enter the contents of the txt file into the wordpress page.
 
-*style.css* (non-Wordpress version) and *guidance_wizard.css* (Wordpress version) contain all the formatting, size, color, and placement information. Make all font and format edits there. Most CSS is tied to a specific ID in HTML to prevent name conflicts with parent themes or other services you may have going. In Wordpress, the style.css is a header only to identify the theme. Edit style.css to identify the parent theme.
+*style.css* (wordpress_theme) is a required header for Wordpress themes.
 
-*guidance_wizard.js* is identical in both non-Wordpress and Wordpress versions. Leave it alone. It requires JQuery, which is included in the HTML dir. Wordpress includes it's own compatible version of JQuery.
+*guidance_wizard.css* (all) contains all the formatting, size, color, and placement information. Make all font and format edits there. Most CSS is tied to a specific ID in HTML to prevent name conflicts with parent themes or other services you may have going. In Wordpress, the style.css is a header only to identify the theme. Edit style.css to identify the parent theme.
 
-*functions.php* is wordpress-only. It creates the html header for the parent and child themes style.css, guidance_wizard.css, JQuery, and guidance_wizard.js
+*guidance_wizard.js* (all) is the javascript magic that shuffles the deck and lays out choice. Leave it alone. It requires JQuery, which is included in the HTML dir. Wordpress includes it's own compatible version of JQuery.
 
-*index.php* is wordpress-only. It is the default template for pages and posts. It's not included - you can copy much of this from the parent theme.
+*guidance_wizard_header.php* (ucw_php, ucw_content) is the header file that loads guidance_wizard.css and guidance_wizard.js.
 
-*contribute_page_template.php* is wordpress-only example single-page template that includes the guidance wizard. As you can see, it's an ordinary page with atinly php code added:
+*functions.php* (wordpress_theme) creates the html header for the parent and child themes style.css, guidance_wizard.css, JQuery, and guidance_wizard.js
+
+*index.php* (wordpress_theme) is the default template for pages and posts. It's not included - you can copy much of this from the parent theme.
+
+*contribute_page_template.php* (wordpress_theme) is an single-page template that includes the guidance wizard. As you can see, it's an ordinary page with atinly php code added:
 
 ```
 <?php
@@ -81,12 +94,12 @@ CSS Bug workaround: The 'Tell me more' and 'I made a mistake' buttons are indent
 
 ## How it works in HTML
 
-Pretty simple: Three HTML header tags load JQuery.js, guidance_wizard.js, and style.css. Everything is local (client-side), and occurs inside the browser.
+Pretty simple: Three HTML header tags load jQuery.js, guidance_wizard.js, and style.css. Everything is local (client-side), and occurs inside the browser.
 
 index.html defines all the data.
 style.css defines how each type of data is displayed.
 guidance_wizard.js tracks which data you are looking at, and which data should come next.
-JQuery.js handles making the past-data invisible and the next-data visible.
+jQuery.js handles making the past-data invisible and the next-data visible.
 
 
 ## How wordpress_theme works in Wordpress

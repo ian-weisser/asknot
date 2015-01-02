@@ -131,8 +131,8 @@
      * #9F639A Light Augergine  70%
      */
     position: relative;
-    left: 60px; /* For test HTML and test Wordpress */
-    /* left: 65px; /* For community.ubuntu.com Wordpress*/
+    /* left: 60px; /* For test HTML and test Wordpress */
+    left: 65px; /* For community.ubuntu.com Wordpress*/
     background-color: #9F639A;
     background: -moz-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
     background: -webkit-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
