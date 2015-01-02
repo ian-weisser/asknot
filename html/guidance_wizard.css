@@ -117,10 +117,10 @@
     position: relative;
     left: 65px;
     background-color: #E77E5A;
-    background: -moz-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
-    background: -webkit-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
-    background: -o-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
-    background: linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #84C83C;
+    background: -moz-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #E77E5A;
+    background: -webkit-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #E77E5A;
+    background: -o-linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #E77E5A;
+    background: linear-gradient(#E77E5A, #DD4814) repeat scroll 0 0 #E77E5A;
     box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
 }
 
@@ -133,10 +133,10 @@
     position: relative;
     left: 60px;
     background-color: #9F639A;
-    background: -moz-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
-    background: -webkit-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
-    background: -o-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
-    background: linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #669BE1;
+    background: -moz-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #9F639A;
+    background: -webkit-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #9F639A;
+    background: -o-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #9F639A;
+    background: linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #9F639A;
     box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
 }
 
@@ -149,10 +149,10 @@
     position: relative;
     left: 65px;
     background-color: #C6C1BB;
-    background: -moz-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
-    background: -webkit-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
-    background: -o-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
-    background: linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #F19932;
+    background: -moz-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #C6C1BB;
+    background: -webkit-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #C6C1BB;
+    background: -o-linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #C6C1BB;
+    background: linear-gradient(#C6C1BB, #AEA79F) repeat scroll 0 0 #C6C1BB;
     box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -4px rgba(0, 0, 0, 0.1) inset;
 }
 
