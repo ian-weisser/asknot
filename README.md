@@ -48,6 +48,10 @@ This software has been tested against the communty.ubunntu.com style several way
     bzr branch lp:ubuntu-community-website  # Download the UCW style
     sudo ln -s ubuntu-community-website /var/lib/wordpress/wp-content/themes
 ```
+    guidance_wizard.css belongs in ubuntu-community-website/library/css/
+    juidance_wizard.js  belongs in ubuntu-community-website/library/js/
+    image files         belong  in ubuntu-community-website/library/images/pictograms/
+
     index.php: includes the file guidance_wizard_header.stub. This stub pulls in the .js and .css files. The UCW theme doesn't use functions.php for enqueueing JS and CSS. 
 
 Bug workaround: On your own pull of UCW for testing, the theme does not add jQuery, so the guidance wizard won't work. To load jQuery for testing, look in index.php for the guidance_wizard_header section and uncomment the jQuery loader. For production, jQuery is already loaded - leave commented.
