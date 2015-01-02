@@ -1,3 +1,4 @@
+
   <div id="volunteer_wizard_intro">
     <h2>Volunteers Wanted</h2>
     <p>Browse some of the volunteer roles available. Explore using the buttons below.
@@ -8,7 +9,7 @@
   <div id="volunteer_wizard">
 
     <div class="group" id="toplevel">
-      <p class="question"><img src="images/pictogram-community-orange-hex.svg">I am interested in...</p>
+      <p class="question"><img src="images/pictogram-community-50x50.png">I am interested in...</p>
       <ul class="choices">
         <li next-group="advocate"><h3>Advocacy</h3></li>
         <li next-group="communicate"><h3>Writing and editing</h3></li>
@@ -21,7 +22,7 @@
 
 
     <div class="group" id="advocate">
-      <p class="question"><img src="images/pictogram-quote-orange-hex.svg">Do you want to tell the world about Ubuntu? You could help:</p>
+      <p class="question"><img src="images/pictogram-quote-50x50.png">Do you want to tell the world about Ubuntu? You could help:</p>
       <ul class="choices">
         <li target="http://www.spreadubuntu.org/en/spreadubuntu-our-project"><h3>Create</h3>
           <p class="extra">Create materials for the Spreadubuntu project</p>
@@ -38,7 +39,7 @@
 
 
     <div class="group" id="communicate">
-      <p class="question"><img src="images/pictogram-camera-orange-hex.svg">Do you have a mighty pen? You could help:</p>
+      <p class="question"><img src="images/pictogram-camera-50x50.png">Do you have a mighty pen? You could help:</p>
       <ul class="choices">
         <li target="https://wiki.ubuntu.com/UbuntuWeeklyNewsletter/Join"><h3>Interview</h3>
           <p class="extra">Get the message across in the Ubuntu Weekly News</p>
@@ -67,7 +68,7 @@
 
 
     <div class="group" id="develop">
-      <p class="question"><img src="images/pictogram-developer-orange-hex.svg">Do you want to change the world with great software? You could help:</p>
+      <p class="question"><img src="images/pictogram-developer-50x50.png">Do you want to change the world with great software? You could help:</p>
       <ul class="choices">
         <li target="https://wiki.ubuntu.com/QATeam/Roles/BugTriager"><h3>Triage bugs</h3>
           <p class="extra">with the Ubuntu QA Team</p>
@@ -105,7 +106,7 @@
 
 
     <div class="group" id="quality">
-      <p class="question"><img src="images/pictogram-dashboard-orange-hex.svg">Do you enjoy finding mistakes and fixing problems? You could help:</p>
+      <p class="question"><img src="images/pictogram-dashboard-50x50.png">Do you enjoy finding mistakes and fixing problems? You could help:</p>
       <ul class="choices">
         <li target="https://wiki.ubuntu.com/FoundationsTeam"><h3>Improve the core OS</h3>
           <p class="extra">with the Ubuntu Foundations Team</p>
@@ -134,7 +135,7 @@
 
 
     <div class="group" id="support">
-      <p class="question"><img src="images/pictogram-help-orange-hex.svg">Do you like helping people? You could help:</p>
+      <p class="question"><img src="images/pictogram-help-50x50.png">Do you like helping people? You could help:</p>
       <ul class="choices">
         <li target="http://ubuntuforums.org/forumdisplay.php?f=100"><h3>Compile tutorials</h3>
           <p class="extra">for the Ubuntu Forums</p>
@@ -165,10 +166,10 @@
 
 
     <div id="responses">
-      <div id="ok"><a href="javascript:"><img src="images/pictogram-projects_we_love-orange-hex.svg"><span class="textbutton">Tell me more</span></a></div>
+      <div id="ok"><a href="javascript:"><img src="images/pictogram-projects-we-love-25x25.png"><span class="textbutton">Tell me more</span></a></div>
 
       <div id="next">
-        <a href="javascript:"><img src="images/pictogram-locations-orange-hex.svg">
+        <a href="javascript:"><img src="images/pictogram-locations-25x25.png">
           <span class="textbutton negative">No thanks, try another</span>
           <span class="textbutton negative">Show me something else</span>
           <span class="textbutton negative">Too dull, keep going</span>
@@ -178,7 +179,7 @@
         </a>
       </div>
 
-      <div id="back"><a href="javascript:"><img src="images/pictogram-delete-orange-hex.svg"><span class="textbutton">I was wrong, take me back</span></a></div>
+      <div id="back"><a href="javascript:"><img src="images/pictogram-delete-25x25.png"><span class="textbutton">I was wrong, take me back</span></a></div>
 
       <!-- message showing only if javascript disabled -->
       <noscript>
