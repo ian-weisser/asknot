@@ -1,4 +1,5 @@
 
+  <a name="guidance_wizard"></a>
   <div id="volunteer_wizard_intro">
     <h2>Volunteers Wanted</h2>
     <p>Browse some of the volunteer roles available. Explore using the buttons below.
