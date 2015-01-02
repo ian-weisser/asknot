@@ -4,7 +4,9 @@ A starting place for contributors to look for projects to work on, this html-bas
 
 This project is HTML, with CSS and Javascript. No special requirements. Most hosting platforms should be able to handle it easily.
 
-A version for Wordpress, is also included in a separate dir. You can safely delete either the HTML or Wordpress dirs that you are not using.
+A version for a Wordpress child theme is also included in a separate dir. You can safely delete either the dirs that you are not using.
+
+Two versions for testing the community.ubuntu.com website are included. If you're not testing changes to this website, you can safely delete the dirs. One version has the HTML in content (database). The other version has the HTML as a separate php file.
 
 A great landing page for each role is strongly recommended, but outside the scope of this tool. A great landing page usually includes sections like: Welcome, prerequisites, how to get started, how to measure your progress, and how to ask for help.
 
@@ -29,8 +31,8 @@ CSS Bug: The 'Tell me more' and 'I made a mistake' buttons are indented 60px, bu
 
 ```
     git clone https://github.com/ian-weisser/asknot
-    sudo ln -s asknot/wordpress /var/lib/wordpress/wp-content/themes/
-    sudo ln -s asknot/wordpress /var/www/html/wordpress/wp-content/themes/
+    sudo ln -s asknot/wordpress_theme /var/lib/wordpress/wp-content/themes/
+    sudo ln -s asknot/wordpress_theme /var/www/html/wordpress/wp-content/themes/
     # Edit the header of style.css to match your desired parent theme name and version
     # Create (or edit) a custom page template. Add the following code in the place you want the guidance wizard to be located:
         <?php
@@ -83,7 +85,7 @@ guidance_wizard.js tracks which data you are looking at, and which data should c
 JQuery.js handles making the past-data invisible and the next-data visible.
 
 
-## How it works in Wordpress
+## How wordpress_theme works in Wordpress
 
 On your web browser, it works exactly the same. After Wordpress serves the page, everything is local to the browser.
 
