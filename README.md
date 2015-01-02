@@ -15,15 +15,19 @@ A great landing page for each role is strongly recommended, but outside the scop
 
 
 ## Installing as a standalone web page
-
+This is handy for trying out new 
+```
     cd /path/to/your/web/dir/
     git clone https://github.com/ian-weisser/asknot
     mv asknot/html/* ./   # Move the contents of 'html' to the web dir
-    rm -rf asknot         # Delete the rest
+    rm -rf asknot         # (Optional) Delete the rest
+```
 
+CSS Bug: The 'Tell me more' and 'I made a mistake' buttons are indented 60px, but the 'Next, please' button is indented 65px to line up properly. See the comments in the CSS (#volunteer_wizard #next .textbutton) This works for standalone web and generic Wordpress. However, it casues a problem with the Ubuntu Community Website theme - change 65 back to 60 for UCW.
 
-## Installing onto Wordpress as a child theme
+## Installing onto generic Wordpress as a child theme
 
+```
     git clone https://github.com/ian-weisser/asknot
     sudo ln -s asknot/wordpress /var/lib/wordpress/wp-content/themes/
     sudo ln -s asknot/wordpress /var/www/html/wordpress/wp-content/themes/
@@ -32,6 +36,21 @@ A great landing page for each role is strongly recommended, but outside the scop
         <?php
           get_template_part( 'guidance_wizard' );
         ?> 
+```
+
+## Installing onto a branch of community.ubuntu.com
+
+This software has been tested against the communty.ubunntu.com style several ways. Don't install as a child theme. Instead:
+
+```
+    bzr branch lp:ubuntu-community-website  # Download the UCW style
+    sudo ln -s ubuntu-community-website /var/lib/wordpress/wp-content/themes
+```
+    index.php: includes the file guidance_wizard_header.stub. This stub pulls in the .js and .css files. The UCW theme doesn't use functions.php for enqueueing JS and CSS. 
+
+Bug workaround: On your own pull of UCW for testing, the theme does not add jQuery, so the guidance wizard won't work. To load jQuery for testing, look in index.php for the guidance_wizard_header section and uncomment the jQuery loader. For production, jQuery is already loaded - leave commented.
+
+CSS Bug workaround: The 'Tell me more' and 'I made a mistake' buttons are indented 60px, but the 'Next, please' button is indented 65px to line up properly. See the comments in the CSS (#volunteer_wizard #next .textbutton) This works for standalone web and generic Wordpress. However, it casues a problem with the Ubuntu Community Website theme - change 65 back to 60 for UCW.
 
 
 ## Important components
