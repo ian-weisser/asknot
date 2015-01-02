@@ -169,14 +169,7 @@
       <div id="ok"><a href="javascript:"><img src="images/pictogram-projects-we-love-25x25.png"><span class="textbutton">Tell me more</span></a></div>
 
       <div id="next">
-        <a href="javascript:"><img src="images/pictogram-locations-25x25.png">
-          <span class="textbutton negative">No thanks, try another</span>
-          <span class="textbutton negative">Show me something else</span>
-          <span class="textbutton negative">Too dull, keep going</span>
-          <span class="textbutton negative">Not interested, keep looking</span>
-          <span class="textbutton negative">Not a good fit, next please</span>
-          <span class="textbutton negative">Next please</span>
-        </a>
+        <a href="javascript:"><img src="images/pictogram-locations-25x25.png"><span class="textbutton negative">No thanks, try another</span><span class="textbutton negative">Show me something else</span><span class="textbutton negative">Too dull, keep going</span><span class="textbutton negative">Not interested, keep looking</span><span class="textbutton negative">Not a good fit, next please</span><span class="textbutton negative">Next please</span></a>
       </div>
 
       <div id="back"><a href="javascript:"><img src="images/pictogram-delete-25x25.png"><span class="textbutton">I was wrong, take me back</span></a></div>
