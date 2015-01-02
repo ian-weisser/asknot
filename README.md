@@ -55,8 +55,9 @@ This software has been tested against the communty.ubunntu.com style several way
 - image files                belong  in ubuntu-community-website/library/images/pictograms/
 - index.php: Edit this file, and add the file guidance_wizard_header.php below the wp_header. This stub pulls in the .js and .css files. The UCW theme doesn't use functions.php for enqueueing JS and CSS. 
 
-- (HTML in database) enter content.txt onto the page.
+- (HTML in database) enter content.txt onto the page using the web entry tool
 - (HTML in php) guidance_wizard.php belongs in ubuntu_community_website/
+- (HTML in php) edit index.php to use guidance_wizard.php
 
 jQuery Bug workaround: On your own pull of UCW for testing, the theme does not add jQuery, so the guidance wizard won't work. To load jQuery for testing.
 - (Testing) In guidance_wizard_header.php, uncomment the jQuery loader.
