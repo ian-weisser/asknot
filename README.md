@@ -4,41 +4,53 @@ A starting place for contributors to look for projects to work on, this html-bas
 
 This project is HTML, with CSS and Javascript. No special requirements. Most hosting platforms should be able to handle it easily.
 
-A version for a Wordpress child theme is also included in a separate dir. You can safely delete either the dirs that you are not using.
+A version for a Wordpress child theme is also included.
 
-Two versions for testing the community.ubuntu.com website are included. If you're not testing changes to this website, you can safely delete the dirs. One version has the HTML in content (database). The other version has the HTML as a separate php file.
+Two versions for testing the community.ubuntu.com website are included, though you may wish to get those branches from Launchpad instead: https://code.launchpad.net/ubuntu-community-website
 
 A great landing page for each role is strongly recommended, but outside the scope of this tool. A great landing page usually includes sections like: Welcome, prerequisites, how to get started, how to measure your progress, and how to ask for help.
 
 ## Try it out without installing anything
 
+- Do:
     git clone https://github.com/ian-weisser/asknot
-    # Open `asknot/html/index.html` in your favorite browser.
+
+- Open `asknot/index.html` in your favorite browser.
+- The .php and .stub files are not used, and can be safely removed.
 
 
 ## Installing as a standalone web page
-This is handy for trying out new 
+This is handy for trying out new features and debugging without all the Wordpress overhead and interference.
+
+- Do:
 ```
     cd /path/to/your/web/dir/
     git clone https://github.com/ian-weisser/asknot
-    mv asknot/html/* ./   # Move the contents of 'html' to the web dir
-    rm -rf asknot         # (Optional) Delete the rest
 ```
+- Open `http://localhost/asknot/index.html` in your favorite browser.
+- The .php and .stub files are not used, and can be safely removed. 
 
-CSS Bug: The 'Tell me more' and 'I made a mistake' buttons are indented 60px, but the 'Next, please' button is indented 65px to line up properly. See the comments in the CSS (#volunteer_wizard #next .textbutton) This works for standalone web and generic Wordpress. However, it casues a problem with the Ubuntu Community Website theme - change 65 back to 60 for UCW.
 
 ## Installing onto generic Wordpress as a child theme
 
+- Do:
 ```
     git clone https://github.com/ian-weisser/asknot
     sudo ln -s asknot/wordpress_theme /var/lib/wordpress/wp-content/themes/
     sudo ln -s asknot/wordpress_theme /var/www/html/wordpress/wp-content/themes/
-    # Edit the header of style.css to match your desired parent theme name and version
-    # Create (or edit) a custom page template. Add the following code in the place you want the guidance wizard to be located:
-        <?php
-          get_template_part( 'guidance_wizard' );
-        ?> 
 ```
+- Create a header file 'style.css' to match your desired parent theme name and version
+- As a child theme, Wordpress will automatically load functions.php. 
+- Rename `index.html` to `guidance_wizard.php`. Edit the file to remove the HTML header and footer (ther are comments in the file showing you what to remove). 
+- Create a custom page template. Anywhere in the body of the template, place this code: 
+```
+//Add the following code in the place you want the guidance wizard to be located:
+<?php
+  get_template_part( 'guidance_wizard' );
+?> 
+```
+- Switch to the new template (or switch away and back again). As a child theme, Wordpress will automatically enqueue the CSS and JS when it runs functions.php. When you open the templated page, the wizard should automatically load and run.
+
 
 ## Installing onto a branch of community.ubuntu.com
 
@@ -47,6 +59,8 @@ This software has been tested against the communty.ubunntu.com style several way
 ```
     bzr branch lp:ubuntu-community-website  # Download the UCW style
     sudo ln -s ubuntu-community-website /var/lib/wordpress/wp-content/themes
+    sudo ln -s ubuntu-community-website /var/www/html/wordpress/wp-content/themes/
+
 ```
 
 - guidance_wizard.css        belongs in ubuntu-community-website/library/css/

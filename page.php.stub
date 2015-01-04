@@ -1,0 +1,10 @@
+// Add the following at the end, BEFORE <?php get_sidebar(); ?>
+
+
+<?php
+//if (is_page( 'contribute'  )) {  // Production
+if (is_page( 2 )) {  // Testing
+    get_template_part( 'guidance_wizard' );
+}
+?>
+

@@ -20,7 +20,8 @@
 
 #volunteer_wizard {     /* div contains all data and js activity */
     position: relative;
-    left: 40px          /* Matches the rest of page content */
+    left: 40px;         /* Matches the rest of page content */
+    height: 200px;
 }
 
 
@@ -131,8 +132,7 @@
      * #9F639A Light Augergine  70%
      */
     position: relative;
-    left: 60px; /* For test HTML and test Wordpress */
-    /* left: 65px; /* For community.ubuntu.com Wordpress*/
+    left: 65px;
     background-color: #9F639A;
     background: -moz-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #9F639A;
     background: -webkit-linear-gradient(#9F639A, #77216F) repeat scroll 0 0 #9F639A;
