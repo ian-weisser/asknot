@@ -63,11 +63,14 @@ Further updates should be in the branched directly. Don't re-import the github d
 ```
 git clone https://github.com/ian-weisser/asknot
 bzr branch lp:ubuntu-community-website  # Download the Ubuntu Community Website style
-sudo ln -s ubuntu-community-website /var/lib/wordpress/wp-content/themes
-sudo ln -s ubuntu-community-website /var/www/html/wordpress/wp-content/themes/
+sudo ln -s /PATH/TO/ubuntu-community-website /var/lib/wordpress/wp-content/themes/
+sudo ln -s /PATH/TO/ubuntu-community-website /var/www/html/wordpress/wp-content/themes/
 ```
+- Note when using sudo: full paths are important.
+- Test: The Ubuntu Theme should show up among available themes.
+- In Wordpress, create a new page called 'Contribute' with some example content in it.
 
-2) Install CSS and JS and Images:
+2) Install CSS, JS, Images:
 ```
 cp asknot/guidance_wizard.css ubuntu-community-website/library/css/
 bzr add ubuntu-community-website/library/css/guidance_wizard.css
@@ -80,75 +83,73 @@ bzr add ubuntu-community-website/library/images/pictograms/*
 3) Install a header to pull in CSS and JS. The UCW website doesn't seem to use functions.php to enqueue them
 ```
 cp asknot/guidance_wizard_header.php ubuntu-community-website/
-bzr add ubuntu-communtiy-website/guidance_wizard_header.php
+bzr add ubuntu-community-website/guidance_wizard_header.php
 ```
-- Open asknot/header.php.stub, and follow it's instructions to place a guidance_wizard_header hook into ubuntu-community-website/header.php
-
+- Open asknot/header.php.stub, and follow its instructions to place a guidance_wizard_header hook into ubuntu-community-website/header.php
+- BUG Workaround: The real UCW website uses some other code to lauch jQuery that this branch does not contain. For testing in your own environment, edit ubuntu-community-website/guidance_wizard_header.php and UNcomment the jQuery loader (look for the "//Testing Only" line).
+- Test: The 'contribute' page source should now include the proper header lines for guidance_wizard.css and guidance_wizard_js, and the kludged-for-testing header line that loads jQuery.
 
 4) Install the content
-- Edit asknot/index.html to remove the header and footer HTML. Use the comments inside the file as a guide. Rename the edited file guidance_wizard.php.
-    bzr add ubuntu-community-website/guidance_wizard.php 
-- Open the page.php.stub file, and follow it's instructions to add a guidance_wizard.php hook into ubuntu-community-website/page.php.
-
-5) Finally, Let's fix the seven <IMG> tags in guidance_wizard.php:
 ```
-# FROM (index.html)
+cp asknot/index.html ubuntu-community-website/guidance_wizard.php
+bzr add ubuntu-community-website/guidance_wizard.php 
+```
+- Edit guidance_wizard.php to remove the header and footer HTML. Use the comments inside the file as a guide.
+- Open asknot/page.php.stub, and follow it's instructions to add a guidance_wizard.php hook into ubuntu-community-website/page.php.
+- Test: The wizard should work now (except for the images). The buttons should be clickable and the links should work.
+
+5) Fix the nine <IMG> tags in guidance_wizard.php that were broken by import to Wordpress.
+```
+# FROM (originally in index.html)
 <img src="images/pictogram-community-50x50.png">
 
 # TO (guidance_wizard.php)
 <img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/pictograms/pictogram-community-50x50.png">
 ```
+- Test: The tool should be complete. All buttons, images,and links should work.
 
-jQuery Bug workaround: On your own pull of UCW for testing, the theme does not add jQuery, so the guidance wizard won't work. To load jQuery for testing.
-- (Testing) In guidance_wizard_header.php, uncomment the jQuery loader.
-- (Production) In guidance_wizard_header.php, leave the jQuery loader commented.
-
-
-## Important components
-
-*index.html* contains all the choice and list data. Make all content edits there. If using ucw_content, manually enter the contents of the txt file into the wordpress page.
-
-*style.css* is a required header for Wordpress themes. NOT INCLUDED.
-
-*guidance_wizard.css* contains all the formatting, size, color, and placement information. Make all font and format edits there. Most CSS is tied to a specific ID in HTML to prevent name conflicts with parent themes or other services you may have going. In Wordpress, the style.css is a header only to identify the theme. Edit style.css to identify the parent theme.
-
-*guidance_wizard.js* is the javascript magic that shuffles the deck and lays out choice. Leave it alone. It requires JQuery, which is included in the HTML dir. Wordpress includes it's own compatible version of JQuery.
-
-*guidance_wizard_header.php* is the Wordpress header file that loads guidance_wizard.css and guidance_wizard.js.
-
-*functions.php* creates the Wordpress html header for the parent and child themes style.css, guidance_wizard.css, JQuery, and guidance_wizard.js
+6) Undo testing kludge:
+- Edit ubuntu-community-website/guidance_wizard_header.php and comment out the jQuery loader. The UCW website runs jQuery from someplace else already. Look for the "// Testing only" comment.
+- You're now ready to bzr push to your own branch.
 
 
-## How it works in HTML
 
-Pretty simple: Three HTML header tags load jQuery.js, guidance_wizard.js, and style.css. Everything is local (client-side), and occurs inside the browser.
+## How it works in ordinary HTML (Non-Wordpress)
 
-index.html defines all the data.
-style.css defines how each type of data is displayed.
-guidance_wizard.js tracks which data you are looking at, and which data should come next.
-jQuery.js handles making the past-data invisible and the next-data visible.
+Pretty simple: Three HTML header tags load jQuery (jQuery.js), the secret sauce JS (guidance_wizard.js), and the stylesheet (guidance_wizard.css). Everything is local (client-side), and all the magic occurs inside the browser.
 
-
-## How wordpress_theme works in Wordpress
-
-On your web browser, it works about the same. After Wordpress serves the page, everything is local to the browser.
-
-All the Wordpress stuff simply crafts the right HTML file for Wordpress to serve.
-
-*style.css* defines this as a child theme (you get to choose which parent theme)
-
-A single-page template (you build this) tells Wordpress when to use the child theme, and tells Wordpress to include the correct content. 
-
-*functions.php* define the correct HTML headers for style.css, guidance_wizard.css, JQuery.js, and guidance_wizard.js
+- index.html has all the data. Change all your content here.
+- guidance_wizard.css does only what CSS is supposed to do - it defines how each type of data is displayed.
+- guidance_wizard.js tracks which data you are looking at, and which data should come next.
+- jQuery.js handles making the past-data invisible and the next-data visible.
 
 
-## Maintenance
+## How it works as a Wordpress theme
+
+To your web browser, it works about the same. After Wordpress serves the page, everything is local to the browser.
+
+All the Wordpress stuff simply crafts the right HTML file for Wordpress to serve. To do that, it uses a couple extra files:
+
+- *style.css* defines this as a child theme (you get to choose which parent theme). It's not included here, but it's easy for you to create.
+
+- *functions.php* creates the correct HTML headers for style.css, guidance_wizard.css, JQuery.js, and guidance_wizard.js. An example is included.
+
+- A page template tells Wordpress when to use the child theme, and tells Wordpress to include the correct content. The install instructions (above) tell you an easy way to convert index.html into guidance_wizard.php and call it from your template.
+
+
+## How it works as a Launchpad Branch for the Ubuntu Community Website
+
+See the notes on the Launchpad branch.
+
+
+
+## Maintenance Notes
 
 Content is handled by the html/php file. You can change content by editing that file and nothing else.
 
-Wordpress editing: Since guidance_wizard.php is a separate file, you can give the maintainer direct control over editing content changes without compromising the rest of your install.
+Wordpress editing: Since guidance_wizard.php is a separate file, you can give the maintainer direct control over editing content without compromising the rest of your install.
 
-Formatting, themes, and styles are all handled by the CSS file. The CSS does not include specific fonts or sizes - it should inherit whatever you specified in a previous CSS file or BODY tag. The CSS does have some spacing and physical layout (like indents) that you may wish to adjust to match your visual design.
+The CSS does not include specific fonts or sizes - it should inherit whatever you specified in a previous CSS file or BODY tag. The CSS does have some spacing and physical layout (like indents and image sizes) that you may wish to adjust to match your visual design.
 
 Logic is handled by the JS file. The logic required that each menu of choices must either be a set of submenus or a set of final destination links - you cannot mix them. If you fix this in the JS, please push a patch this way!
 
@@ -162,11 +163,11 @@ A big THANK YOU to all the Mozilla contributors who made this cool software, and
 The complete list of contributors who have our gratitude is at https://github.com/ian-weisser/asknot/contributors
 
 
-## Editing the choices
+## How to edit the content (Add my stuff to the list!)
 
 Let's pretend to add a new top-level choice 'Wrestling' to go along with Advocacy, Development, etc.
 
-All changes take place in index.html. You don't need to touch any of the other files.
+All changes take place in index.html (or guidance_wizard.php). You don't need to touch any of the other files.
 
 *First*, let's add the actual list entry in toplevel. 
 - We need a string for people to see ("Wrestling")
@@ -186,7 +187,7 @@ All changes take place in index.html. You don't need to touch any of the other f
 
 *Second*, let's create the subgroup with three choices.
 - The entire subgroup should have an intro string or *question* ("So you like to dress down?")
-- Each choice should include a string ("Professional!")
+- Each choice should include a simple, clever phrase ("Professional!")
 - Some choices may include an expanded description ("best acting job in town")
 - Each choice should include a landing URL (http://example.com/pro_wrestling)
 

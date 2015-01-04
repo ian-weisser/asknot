@@ -21,7 +21,7 @@
 #volunteer_wizard {     /* div contains all data and js activity */
     position: relative;
     left: 40px;         /* Matches the rest of page content */
-    height: 200px;
+    min-height: 250px;  /* Prevent bottom of page from jumping around */
 }
 
 

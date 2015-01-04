@@ -2,10 +2,11 @@
 
 <!-- guidance wizard head -->
 <?php
-//if (is_page( 'contribute'  )) {  // Production
-if (is_page( 2 )) {                // Testing
-    get_template_part( 'guidance_wizard_header' );
+if (is_page( 'contribute'  )) {               
+   echo "<!-- guidance wizard is only on the 'contribute' page -->\n";
+   get_template_part( 'guidance_wizard_header' );
 }
 ?>
 <!-- end of guidance wizard head -->
+
 
