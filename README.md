@@ -40,7 +40,8 @@ This is handy for trying out new features and debugging without all the Wordpres
     sudo ln -s asknot/wordpress_theme /var/www/html/wordpress/wp-content/themes/
 ```
 - Create a header file 'style.css' to match your desired parent theme name and version
-- As a child theme, Wordpress will automatically load functions.php. 
+- As a child theme, Wordpress will automatically load functions.php.
+- Wordpress includes it's own jQuery.js. The version of jQuery included with this software is not used, and can be safely removed.
 - Rename `index.html` to `guidance_wizard.php`. Edit the file to remove the HTML header and footer (ther are comments in the file showing you what to remove). 
 - Create a custom page template. Anywhere in the body of the template, place this code: 
 ```
@@ -54,58 +55,63 @@ This is handy for trying out new features and debugging without all the Wordpres
 
 ## Installing onto a branch of community.ubuntu.com
 
-This software has been tested against the communty.ubunntu.com style several ways. Don't install as a child theme. Instead:
+You should use the Launchpad branch instead of the git version.
+These instructions show how the github files were installed into the LP branches.
+Further updates should be in the branched directly. Don't re-import the github data.
 
+1) Setup:
 ```
-    bzr branch lp:ubuntu-community-website  # Download the UCW style
-    sudo ln -s ubuntu-community-website /var/lib/wordpress/wp-content/themes
-    sudo ln -s ubuntu-community-website /var/www/html/wordpress/wp-content/themes/
-
+git clone https://github.com/ian-weisser/asknot
+bzr branch lp:ubuntu-community-website  # Download the Ubuntu Community Website style
+sudo ln -s ubuntu-community-website /var/lib/wordpress/wp-content/themes
+sudo ln -s ubuntu-community-website /var/www/html/wordpress/wp-content/themes/
 ```
 
-- guidance_wizard.css        belongs in ubuntu-community-website/library/css/
-- guidance_wizard.js         belongs in ubuntu-community-website/library/js/
-- guidance_wizard_header.php belongs in ubuntu-community-website/library/functions/
-- image files                belong  in ubuntu-community-website/library/images/pictograms/
-- index.php: Edit this file, and add the file guidance_wizard_header.php below the wp_header. This stub pulls in the .js and .css files. The UCW theme doesn't use functions.php for enqueueing JS and CSS. 
+2) Install CSS and JS and Images:
+```
+cp asknot/guidance_wizard.css ubuntu-community-website/library/css/
+bzr add ubuntu-community-website/library/css/guidance_wizard.css
+cp asknot/guidance_wizard.js  ubuntu-community-website/library/js/
+bzr add ubuntu-community-website/library/js/guidance_wizard.js
+cp asknot/images/pictograms/* ubuntu-community-website/library/images/pictograms/
+bzr add ubuntu-community-website/library/images/pictograms/*
+```
 
-- (HTML in database) enter content.txt onto the page using the web entry tool
-- (HTML in php) guidance_wizard.php belongs in ubuntu_community_website/
-- (HTML in php) edit index.php to use guidance_wizard.php
+3) Install a header to pull in CSS and JS. The UCW website doesn't seem to use functions.php to enqueue them
+```
+cp asknot/guidance_wizard_header.php ubuntu-community-website/
+bzr add ubuntu-communtiy-website/guidance_wizard_header.php
+```
+- Open asknot/header.php.stub, and follow it's instructions to place a guidance_wizard_header hook into ubuntu-community-website/header.php
+
+
+4) Install the content
+- Edit asknot/index.html to remove the header and footer HTML. Use the comments inside the file as a guide. Rename the edited file guidance_wizard.php.
+    bzr add ubuntu-community-website/guidance_wizard.php 
+- Open the page.php.stub file, and follow it's instructions to add a guidance_wizard.php hook into ubuntu-community-website/page.php.
+
+- Finally, the conversion to Wordpress broke all the images. Let's fix those.
+
 
 jQuery Bug workaround: On your own pull of UCW for testing, the theme does not add jQuery, so the guidance wizard won't work. To load jQuery for testing.
 - (Testing) In guidance_wizard_header.php, uncomment the jQuery loader.
 - (Production) In guidance_wizard_header.php, leave the jQuery loader commented.
 
-CSS Bug workaround: The 'Tell me more' and 'I made a mistake' buttons are indented 60px, but the 'Next, please' button is indented 65px to line up properly. See the comments in the CSS (#volunteer_wizard #next .textbutton). This problem only occurs if you make a change in the HTML or wordpress_theme CSS, and copy those changes to UCW CSS.
-- In guidance_wizard.css, #volunteer_wizard #next .textbutton, change '65px' back to '60px'.
-
 
 ## Important components
 
-*index.html* (html),
-*guidance_wizard.php* (wordpress_theme, ucw_php), and
-*content.txt* (ucw_content) contain all the choice and list data. Make all content edits there. If using ucw_content, manually enter the contents of the txt file into the wordpress page.
+*index.html* contains all the choice and list data. Make all content edits there. If using ucw_content, manually enter the contents of the txt file into the wordpress page.
 
-*style.css* (wordpress_theme) is a required header for Wordpress themes.
+*style.css* is a required header for Wordpress themes. NOT INCLUDED.
 
-*guidance_wizard.css* (all) contains all the formatting, size, color, and placement information. Make all font and format edits there. Most CSS is tied to a specific ID in HTML to prevent name conflicts with parent themes or other services you may have going. In Wordpress, the style.css is a header only to identify the theme. Edit style.css to identify the parent theme.
+*guidance_wizard.css* contains all the formatting, size, color, and placement information. Make all font and format edits there. Most CSS is tied to a specific ID in HTML to prevent name conflicts with parent themes or other services you may have going. In Wordpress, the style.css is a header only to identify the theme. Edit style.css to identify the parent theme.
 
-*guidance_wizard.js* (all) is the javascript magic that shuffles the deck and lays out choice. Leave it alone. It requires JQuery, which is included in the HTML dir. Wordpress includes it's own compatible version of JQuery.
+*guidance_wizard.js* is the javascript magic that shuffles the deck and lays out choice. Leave it alone. It requires JQuery, which is included in the HTML dir. Wordpress includes it's own compatible version of JQuery.
 
-*guidance_wizard_header.php* (ucw_php, ucw_content) is the header file that loads guidance_wizard.css and guidance_wizard.js.
+*guidance_wizard_header.php* is the Wordpress header file that loads guidance_wizard.css and guidance_wizard.js.
 
-*functions.php* (wordpress_theme) creates the html header for the parent and child themes style.css, guidance_wizard.css, JQuery, and guidance_wizard.js
+*functions.php* creates the Wordpress html header for the parent and child themes style.css, guidance_wizard.css, JQuery, and guidance_wizard.js
 
-*index.php* (wordpress_theme) is the default template for pages and posts. It's not included - you can copy much of this from the parent theme.
-
-*contribute_page_template.php* (wordpress_theme) is an single-page template that includes the guidance wizard. As you can see, it's an ordinary page with atinly php code added:
-
-```
-<?php
-  get_template_part( 'guidance_wizard' );
-?>
-```
 
 ## How it works in HTML
 
@@ -119,7 +125,7 @@ jQuery.js handles making the past-data invisible and the next-data visible.
 
 ## How wordpress_theme works in Wordpress
 
-On your web browser, it works exactly the same. After Wordpress serves the page, everything is local to the browser.
+On your web browser, it works about the same. After Wordpress serves the page, everything is local to the browser.
 
 All the Wordpress stuff simply crafts the right HTML file for Wordpress to serve.
 
@@ -157,8 +163,8 @@ Let's pretend to add a new top-level choice 'Wrestling' to go along with Advocac
 All changes take place in index.html. You don't need to touch any of the other files.
 
 *First*, let's add the actual list entry in toplevel. 
-- We need a string ("Wrestling")
-- We need a subgroup ID ('wrestle')
+- We need a string for people to see ("Wrestling")
+- We need a unique subgroup ID that people won't see ('wrestle')
 
 ```
 <div class="group" id="toplevel">
