@@ -35,8 +35,7 @@
     width:  50px;
     vertical-align: middle;
     position: relative;
-    right: 5px
-    /*padding: 0 5px 0 0; /* 5px right side gutter btwn img and text */ 
+    right: 5px;
 }
 
 #volunteer_wizard .question {   /* "How would you like to help?" */
@@ -65,7 +64,7 @@
  *
  * Textbuttons also have events for mouseover and click.
  * 
- * Button colors are from https://design.ubuntu.com/brand/colour-palette 
+ * Button colors are from http://design.ubuntu.com/brand/colour-palette 
  */
 
 

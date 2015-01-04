@@ -73,7 +73,7 @@ cp asknot/guidance_wizard.css ubuntu-community-website/library/css/
 bzr add ubuntu-community-website/library/css/guidance_wizard.css
 cp asknot/guidance_wizard.js  ubuntu-community-website/library/js/
 bzr add ubuntu-community-website/library/js/guidance_wizard.js
-cp asknot/images/pictograms/* ubuntu-community-website/library/images/pictograms/
+cp asknot/images/* ubuntu-community-website/library/images/pictograms/
 bzr add ubuntu-community-website/library/images/pictograms/*
 ```
 
@@ -90,8 +90,14 @@ bzr add ubuntu-communtiy-website/guidance_wizard_header.php
     bzr add ubuntu-community-website/guidance_wizard.php 
 - Open the page.php.stub file, and follow it's instructions to add a guidance_wizard.php hook into ubuntu-community-website/page.php.
 
-- Finally, the conversion to Wordpress broke all the images. Let's fix those.
+5) Finally, Let's fix the seven <IMG> tags in guidance_wizard.php:
+```
+# FROM (index.html)
+<img src="images/pictogram-community-50x50.png">
 
+# TO (guidance_wizard.php)
+<img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/pictograms/pictogram-community-50x50.png">
+```
 
 jQuery Bug workaround: On your own pull of UCW for testing, the theme does not add jQuery, so the guidance wizard won't work. To load jQuery for testing.
 - (Testing) In guidance_wizard_header.php, uncomment the jQuery loader.
